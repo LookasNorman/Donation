@@ -10,4 +10,12 @@ namespace AppBundle\Repository;
  */
 class DonationRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function sumQuantityBags()
+    {
+        $query = $this->createQueryBuilder('d')
+            ->select('sum(d.quantity)')
+            ->getQuery()
+            ->getSingleScalarResult();
+        return $query;
+    }
 }
