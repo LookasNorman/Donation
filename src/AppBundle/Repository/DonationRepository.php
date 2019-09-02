@@ -10,12 +10,28 @@ namespace AppBundle\Repository;
  */
 class DonationRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * @return mixed
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * Get sum of donation bags
+     */
     public function sumQuantityBags()
     {
         $query = $this->createQueryBuilder('d')
             ->select('sum(d.quantity)')
             ->getQuery()
             ->getSingleScalarResult();
+        return $query;
+    }
+
+    public function institution()
+    {
+        $query = $this->createQueryBuilder('d')
+            ->select('count(d.institution)')
+            ->groupBy('d.institution')
+            ->getQuery()
+            ->getOneOrNullResult();
         return $query;
     }
 }
