@@ -35,6 +35,10 @@ class Institution
      */
     private $description;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Donation", mappedBy="institution")
+     */
+    private $donation; 
 
     /**
      * Get id
@@ -93,5 +97,45 @@ class Institution
     {
         return $this->description;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->donation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add donation
+     *
+     * @param \AppBundle\Entity\Donation $donation
+     *
+     * @return Institution
+     */
+    public function addDonation(\AppBundle\Entity\Donation $donation)
+    {
+        $this->donation[] = $donation;
+
+        return $this;
+    }
+
+    /**
+     * Remove donation
+     *
+     * @param \AppBundle\Entity\Donation $donation
+     */
+    public function removeDonation(\AppBundle\Entity\Donation $donation)
+    {
+        $this->donation->removeElement($donation);
+    }
+
+    /**
+     * Get donation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDonation()
+    {
+        return $this->donation;
+    }
+}
