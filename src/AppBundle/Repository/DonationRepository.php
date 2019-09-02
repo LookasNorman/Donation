@@ -31,7 +31,7 @@ class DonationRepository extends \Doctrine\ORM\EntityRepository
             ->select('count(d.institution)')
             ->groupBy('d.institution')
             ->getQuery()
-            ->getOneOrNullResult();
+            ->execute();
         return $query;
     }
 }
