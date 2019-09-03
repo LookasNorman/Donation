@@ -67,5 +67,45 @@ class Category
     {
         return $this->name;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->donation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add donation
+     *
+     * @param \AppBundle\Entity\Donation $donation
+     *
+     * @return Category
+     */
+    public function addDonation(\AppBundle\Entity\Donation $donation)
+    {
+        $this->donation[] = $donation;
+
+        return $this;
+    }
+
+    /**
+     * Remove donation
+     *
+     * @param \AppBundle\Entity\Donation $donation
+     */
+    public function removeDonation(\AppBundle\Entity\Donation $donation)
+    {
+        $this->donation->removeElement($donation);
+    }
+
+    /**
+     * Get donation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDonation()
+    {
+        return $this->donation;
+    }
+}

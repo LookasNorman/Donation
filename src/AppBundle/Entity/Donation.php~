@@ -82,6 +82,12 @@ class Donation
      */
     private $pickUpComment;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="text")
+     */
+    private $phone;
 
     /**
      * Get id
@@ -260,5 +266,54 @@ class Donation
     {
         return $this->pickUpComment;
     }
-}
 
+    /**
+     * Set categories
+     *
+     * @param \AppBundle\Entity\Category $categories
+     *
+     * @return Donation
+     */
+    public function setCategories(\AppBundle\Entity\Category $categories = null)
+    {
+        $this->categories = $categories;
+
+        return $this;
+    }
+
+    /**
+     * Get categories
+     *
+     * @return \AppBundle\Entity\Category
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * Set institution
+     *
+     * @param \AppBundle\Entity\Institution $institution
+     *
+     * @return Donation
+     */
+    public function setInstitution(\AppBundle\Entity\Institution $institution = null)
+    {
+        $this->institution = $institution;
+
+        return $this;
+    }
+
+    /**
+     * Get institution
+     *
+     * @return \AppBundle\Entity\Institution
+     */
+    public function getInstitution()
+    {
+        return $this->institution;
+    }
+
+
+}
