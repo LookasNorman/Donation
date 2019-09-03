@@ -29,8 +29,8 @@ class Donation
     private $quantity;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Category", inversedBy="donation")
-     * @ORM\JoinTable(name="donation_category")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="donation")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $categories;
 
@@ -82,7 +82,13 @@ class Donation
      */
     private $pickUpComment;
 
-    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="text")
+     */
+    private $phone;
+
     /**
      * Get id
      *
@@ -310,35 +316,28 @@ class Donation
     }
 
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
-     * Add category
+     * Set phone
      *
-     * @param \AppBundle\Entity\Category $category
+     * @param string $phone
      *
      * @return Donation
      */
-    public function addCategory(\AppBundle\Entity\Category $category)
+    public function setPhone($phone)
     {
-        $this->categories[] = $category;
+        $this->phone = $phone;
 
         return $this;
     }
 
     /**
-     * Remove category
+     * Get phone
      *
-     * @param \AppBundle\Entity\Category $category
+     * @return string
      */
-    public function removeCategory(\AppBundle\Entity\Category $category)
+    public function getPhone()
     {
-        $this->categories->removeElement($category);
+        return $this->phone;
     }
 }

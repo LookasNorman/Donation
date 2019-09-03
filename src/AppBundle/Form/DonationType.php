@@ -7,7 +7,10 @@ use AppBundle\Entity\Institution;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -22,24 +25,52 @@ class DonationType extends AbstractType
             ->add('categories', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name',
-                'multiple' => true,
-                'expanded' => true
+                'required' => true,
+                'expanded' => true,
+                'attr' => [
+                    'name' => 'categories',
+                    'class' => 'checkbox',
+                ]
             ])
             ->add('institution', EntityType::class, [
                 'class' => Institution::class,
                 'choice_label' => 'name',
                 'required' => true,
-                'expanded' => true
+                'expanded' => true,
+                'attr' => [
+                    'name' => 'organization'
+                ]
             ])
             ->add('quantity', NumberType::class, [
                 'required' => true,
+                'attr' => [
+                    'step' => 1,
+                    'min' => 1,
+                ]
             ])
-            ->add('street')
-            ->add('city')
-            ->add('zipCode')
-            ->add('pickUpDate')
-            ->add('pickUpTime')
-            ->add('pickUpComment');
+            ->add('street', TextType::class, [
+                'required' => true,
+            ])
+            ->add('city', TextType::class, [
+                'required' => true,
+            ])
+            ->add('zipCode', TextType::class, [
+                'required' => true,
+            ])
+            ->add('pickUpDate', DateType::class, [
+                'widget' => 'single_text',
+                'required' => true,
+            ])
+            ->add('pickUpTime', TimeType::class, [
+                'widget' => 'single_text',
+                'required' => true,
+            ])
+            ->add('pickUpComment', TextType::class, [
+                'required' => true,
+            ])
+            ->add('phone', TextType::class, [
+                'required' => true,
+            ]);
     }
 
     /**

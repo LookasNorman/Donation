@@ -2,7 +2,9 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Category;
 use AppBundle\Entity\Donation;
+use AppBundle\Entity\Institution;
 use AppBundle\Form\DonationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,23 +19,38 @@ class DonationController extends Controller
      */
     public function addDonation(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
         $donation = new Donation();
         $form = $this->createForm('AppBundle\Form\DonationType', $donation);
-//        var_dump($request);
+
+        $institutions = $em->getRepository(Institution::class)->findAll();
+        $categories = $em->getRepository(Category::class)->findAll();
+
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() ) {
-//            var_dump($form);exit;
-            $em = $this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid()) {
+
             $em->persist($donation);
             $em->flush();
 
-            return $this->redirectToRoute('brands_show');
+            return $this->redirectToRoute('added_donation');
         }
-//        var_dump($form);
+
         return $this->render('@App/form/form.html.twig', array(
             'donation' => $donation,
+            'categories' => $categories,
+            'institutions' => $institutions,
             'form' => $form->createView(),
         ));
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/formConfirmation", name="added_donation")
+     */
+    public function addedDonation()
+    {
+        return $this->render('@App/form/form-confirmation.html.twig');
     }
 }

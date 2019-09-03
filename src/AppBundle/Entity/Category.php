@@ -29,7 +29,7 @@ class Category
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Donation", mappedBy="categories")
+     * @ORM\OneToMany(targetEntity="Donation", mappedBy="categories")
      */
     private $donation;
 
