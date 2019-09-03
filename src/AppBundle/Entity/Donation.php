@@ -29,8 +29,8 @@ class Donation
     private $quantity;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="donation")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="donation")
+     * @ORM\JoinTable(name="donation_category")
      */
     private $categories;
 
@@ -82,7 +82,7 @@ class Donation
      */
     private $pickUpComment;
 
-
+    
     /**
      * Get id
      *
@@ -307,5 +307,38 @@ class Donation
     public function getInstitution()
     {
         return $this->institution;
+    }
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add category
+     *
+     * @param \AppBundle\Entity\Category $category
+     *
+     * @return Donation
+     */
+    public function addCategory(\AppBundle\Entity\Category $category)
+    {
+        $this->categories[] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Remove category
+     *
+     * @param \AppBundle\Entity\Category $category
+     */
+    public function removeCategory(\AppBundle\Entity\Category $category)
+    {
+        $this->categories->removeElement($category);
     }
 }

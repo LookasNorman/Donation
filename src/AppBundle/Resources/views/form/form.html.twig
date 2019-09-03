@@ -55,10 +55,11 @@
         <div class="form--steps-container">
             <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
-            <form action="form-confirmation.html" method="post">
+            <form action="{{path('add_donation')}}" method="post">
                 <!-- STEP 1: class .active is switching steps -->
                 <div data-step="1" class="active">
                     <h3>Zaznacz co chcesz oddać:</h3>
+
 {#                    Show all categories#}
                     {% for category in form.categories %}
                         <div class="form-group form-group--checkbox">
@@ -66,7 +67,7 @@
                                 <input
                                         type="checkbox"
                                         name="categories"
-                                        value="{{category.vars.value}}"
+                                        value="{{ category.vars.value }}"
                                 />
                                 <span class="checkbox"></span>
                                 <span class="description"
