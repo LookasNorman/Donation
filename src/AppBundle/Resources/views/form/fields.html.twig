@@ -1,0 +1,23 @@
+{%- block email_widget -%}
+    <div class="form-group">
+        {%- set type = type|default('email') -%}
+        {{ block('form_widget_simple') }}
+    </div>
+{%- endblock email_widget -%}
+
+{%- block password_widget -%}
+    <div class="form-group">
+        {%- set type = type|default('password') -%}
+        {{ block('form_widget_simple') }}
+    </div>
+{%- endblock password_widget -%}
+
+{%- block form_widget -%}
+    <div class="form-group">
+        {% if compound %}
+            {{- block('form_widget_compound') -}}
+        {% else %}
+            {{- block('form_widget_simple') -}}
+        {% endif %}
+    </div>
+{%- endblock form_widget -%}
