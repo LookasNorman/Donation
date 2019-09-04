@@ -1,0 +1,14 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% form_theme form '@App/form/fields.html.twig' %}
+
+<section class="login-page">
+    <h2>Moje dane</h2>
+
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    {{ form_widget(form) }}
+    <div class="form-group form-group--buttons">
+        <button class="btn" type="submit">Zapisz</button>
+    </div>
+{{ form_end(form) }}
+</section>
