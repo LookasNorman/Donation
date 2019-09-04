@@ -1,13 +1,18 @@
 <ul class="nav--actions">
-    <li><a href="#">Zaloguj</a></li>
-    <li class="highlighted"><a href="#">Załóż konto</a></li>
+    {% if is_granted('ROLE_USER') %}
+    {% else %}
+    <li><a href="{{ path('fos_user_security_login') }}">Zaloguj</a></li>
+    {% endif %}
+    <li class="highlighted"><a href="{{ path('fos_user_registration_register') }}">Załóż konto</a></li>
+    {% if is_granted('ROLE_USER') %}
     <li class="logged-user">
         Witaj Agata
         <ul class="dropdown">
-            <li><a href="#">Profil</a></li>
+            <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
             <li><a href="#">Ustawienia</a></li>
             <li><a href="#">Moje zbiórki</a></li>
-            <li><a href="#">Wyloguj</a></li>
+            <li><a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></li>
         </ul>
     </li>
+    {% endif %}
 </ul>
