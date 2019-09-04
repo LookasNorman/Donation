@@ -1,13 +1,14 @@
 {% extends '@App/base.html.twig' %}
-{% block body %}
-<header class="header--form-page">
-    {% include '@App/menu/main.html.twig' %}
 
+{% block header %}
+<header class="header--form-page">
+    {% endblock %}
+
+    {% block confirm-form %}
     <div class="slogan container container--90">
         <h2>
             Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
             informacje o odbiorze.
         </h2>
     </div>
-</header>
-{% endblock %}
+    {% endblock %}

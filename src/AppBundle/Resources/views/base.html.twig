@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"/>
 </head>
 <body>
-<header class="header--main-page">
-    {% include '@App/home/header.html.twig' %}
-    {% block donation %}
-    {% endblock %}
+{% block header %}
+{% endblock %}
+{% include '@App/home/header.html.twig' %}
+{% block donation %}
+{% endblock %}
+{% block confirmform %}
+{% endblock %}
 </header>
 
 {% block body %}
