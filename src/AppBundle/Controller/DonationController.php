@@ -6,6 +6,7 @@ use AppBundle\Entity\Category;
 use AppBundle\Entity\Donation;
 use AppBundle\Entity\Institution;
 use AppBundle\Form\DonationType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,6 +17,7 @@ class DonationController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @Route("/form", name="add_donation", methods={"GET", "POST"})
+     * @Security("is_granted('ROLE_USER')")
      */
     public function addDonation(Request $request)
     {
@@ -48,6 +50,7 @@ class DonationController extends Controller
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/formConfirmation", name="added_donation")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function addedDonation()
     {
