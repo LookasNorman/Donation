@@ -1,37 +1,35 @@
 {% extends '@App/base.html.twig' %}
 
-{% block body %}
-    <header class="header--form-page">
-        {% include '@App/menu/main.html.twig' %}
+{% block donation %}
+    <div class="slogan container container--90">
+        <div class="slogan--item">
+            <h1>
+                Oddaj rzeczy, których już nie chcesz<br/>
+                <span class="uppercase">potrzebującym</span>
+            </h1>
 
-        <div class="slogan container container--90">
-            <div class="slogan--item">
-                <h1>
-                    Oddaj rzeczy, których już nie chcesz<br/>
-                    <span class="uppercase">potrzebującym</span>
-                </h1>
-
-                <div class="slogan--steps">
-                    <div class="slogan--steps-title">Wystarczą 4 proste kroki:</div>
-                    <ul class="slogan--steps-boxes">
-                        <li>
-                            <div><em>1</em><span>Wybierz rzeczy</span></div>
-                        </li>
-                        <li>
-                            <div><em>2</em><span>Spakuj je w worki</span></div>
-                        </li>
-                        <li>
-                            <div><em>3</em><span>Wybierz fundację</span></div>
-                        </li>
-                        <li>
-                            <div><em>4</em><span>Zamów kuriera</span></div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="slogan--steps">
+                <div class="slogan--steps-title">Wystarczą 4 proste kroki:</div>
+                <ul class="slogan--steps-boxes">
+                    <li>
+                        <div><em>1</em><span>Wybierz rzeczy</span></div>
+                    </li>
+                    <li>
+                        <div><em>2</em><span>Spakuj je w worki</span></div>
+                    </li>
+                    <li>
+                        <div><em>3</em><span>Wybierz fundację</span></div>
+                    </li>
+                    <li>
+                        <div><em>4</em><span>Zamów kuriera</span></div>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </div>
+{% endblock %}
 
+{% block body %}
     <section class="form--steps">
         <div class="form--steps-instructions">
             <div class="form--steps-container">
@@ -55,12 +53,12 @@
         <div class="form--steps-container">
             <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
-            <form action="{{path('add_donation')}}" method="post">
-
+            <form action="{{ path('add_donation') }}" method="post">
+                {#            {{ form_start(form) }}#}
                 <!-- STEP 1: class .active is switching steps -->
                 <div data-step="1" class="active">
                     <h3>Zaznacz co chcesz oddać:</h3>
-{#                    Show all categories#}
+                    {#                    Show all categories#}
                     {% for category in form.categories %}
                         <div class="form-group form-group--checkbox">
                             <label>
@@ -71,7 +69,7 @@
                                 />
                                 <span class="checkbox"></span>
                                 <span class="description"
-                                >{{ category.vars.label}}</span
+                                >{{ category.vars.label }}</span
                                 >
                             </label>
                         </div>
@@ -89,7 +87,7 @@
                         <label>
                             Liczba 60l worków:
                             {{ form_widget(form.quantity) }}
-{#                            <input type="number" name="quantity" step="1" min="1"/>#}
+                            {#                            <input type="number" name="quantity" step="1" min="1"/>#}
                         </label>
                     </div>
 
@@ -99,23 +97,22 @@
                     </div>
                 </div>
 
-
                 <!-- STEP 4 -->
                 <div data-step="3">
                     <h3>Wybierz organizacje, której chcesz pomóc:</h3>
                     {% for institution in institutions %}
-                    <div class="form-group form-group--checkbox">
-                        <label>
-                            <input type="radio" name="institution" value="{{institution.id}}"/>
-                            <span class="checkbox radio"></span>
-                            <span class="description">
-                  <div class="title">{{institution.name}}</div>
+                        <div class="form-group form-group--checkbox">
+                            <label>
+                                <input type="radio" name="institution" value="{{ institution.id }}"/>
+                                <span class="checkbox radio"></span>
+                                <span class="description">
+                  <div class="title">{{ institution.name }}</div>
                   <div class="subtitle">
-                    {{institution.description}}
+                    {{ institution.description }}
                   </div>
                 </span>
-                        </label>
-                    </div>
+                            </label>
+                        </div>
                     {% endfor %}
 
                     <div class="form-group form-group--buttons">
@@ -156,7 +153,7 @@
                             <h4>Termin odbioru</h4>
                             <div class="form-group form-group--inline">
                                 <label> Data
-{#                                    {{ form_widget(form.pickUpDate) }}#}
+                                    {#                                    {{ form_widget(form.pickUpDate) }}#}
                                     <input type="date" name="pickUpDate"/>
                                 </label>
                             </div>
@@ -232,7 +229,7 @@
                 </div>
                 {{ form_widget(form._token) }}
                 {{ form_errors(form) }}
-{#            {{ form_end(form) }}#}
+                {#            {{ form_end(form) }}#}
             </form>
         </div>
     </section>
