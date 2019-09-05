@@ -53,6 +53,7 @@ class User extends BaseUser
      */
     public function setEmail($email)
     {
+        $this->setUsername($email);
         $this->email = $email;
     }
 
