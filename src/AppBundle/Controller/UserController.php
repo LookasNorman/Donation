@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -27,6 +28,7 @@ class UserController extends Controller
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/admin", name="admin_page")
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function adminPageAction()
     {
