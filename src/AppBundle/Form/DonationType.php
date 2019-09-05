@@ -28,6 +28,7 @@ class DonationType extends AbstractType
                 'choice_label' => 'name',
                 'required' => true,
                 'expanded' => true,
+                'multiple' => true,
                 'attr' => [
                     'name' => 'categories',
                     'class' => 'checkbox',

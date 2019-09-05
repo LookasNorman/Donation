@@ -3,7 +3,7 @@ $(function () {
         let step = $('div .active').attr('data-step');
 
         if (step == 5) {
-            $('#category-summary').text($('input[name="categories"]:checked').parent().children('.description').text());
+            $('#category-summary').text($('input[name="categories[]"]:checked').parent().children('.description').text());
             $('#quantity-summary').text($('input[name="quantity"]').val());
             $('#institution-summary')
                 .text($('input[name="institution"]:checked')
