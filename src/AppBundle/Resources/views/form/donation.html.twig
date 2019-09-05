@@ -12,16 +12,6 @@
     </div>
 {%- endblock password_widget -%}
 
-{%- block form_widget -%}
-    <div class="form-group">
-        {% if compound %}
-            {{- block('form_widget_compound') -}}
-        {% else %}
-            {{- block('form_widget_simple') -}}
-        {% endif %}
-    </div>
-{%- endblock form_widget -%}
-
 {%- block checkbox_widget -%}
     <div class="form-group form-group--checkbox">
         <label>
