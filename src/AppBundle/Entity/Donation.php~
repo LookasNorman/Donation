@@ -29,8 +29,8 @@ class Donation
     private $quantity;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="donation")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="donation")
+     * @ORM\JoinTable(name="donations_categories")
      */
     private $categories;
 
@@ -316,4 +316,28 @@ class Donation
     }
 
 
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     *
+     * @return Donation
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
 }
