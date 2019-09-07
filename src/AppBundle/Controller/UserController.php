@@ -32,6 +32,14 @@ class UserController extends Controller
      */
     public function adminPageAction()
     {
-        return $this->render('@App/user/admin-page.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $user->getId();
+
+        $loggedUser = $em->getRepository(User::class)->find($user);
+
+        return $this->render('@App/user/admin-page.html.twig', [
+            'loggedUser' => $loggedUser,
+        ]);
     }
 }
