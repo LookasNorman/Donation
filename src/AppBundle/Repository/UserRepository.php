@@ -16,4 +16,13 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
 
         return $users = $query->getResult();
     }
+
+    public function showAllNotAdmin()
+    {
+        $query = $this->getEntityManager()
+            ->createQuery('SELECT u FROM AppBundle:User u WHERE u.roles NOT LIKE :role'
+            )->setParameter('role', '%"ROLE_ADMIN"%' );
+
+        return $users = $query->getResult();
+    }
 }
