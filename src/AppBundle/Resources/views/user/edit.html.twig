@@ -24,6 +24,22 @@
                     {{ form_widget(edit_form.email) }}
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-1">
+                    {{ form_label(edit_form.firstname) }}
+                </div>
+                <div class="col-sm">
+                    {{ form_widget(edit_form.firstname) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">
+                    {{ form_label(edit_form.surname) }}
+                </div>
+                <div class="col-sm">
+                    {{ form_widget(edit_form.surname) }}
+                </div>
+            </div>
             <input type="submit" value="Edit" class="btn-primary"/>
         </div>
         {{ form_end(edit_form) }}
