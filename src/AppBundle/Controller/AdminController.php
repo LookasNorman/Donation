@@ -4,32 +4,16 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * User controller.
- *
- * @Route("user")
+ * Class AdminController
+ * @package AppBundle\Controller
+ * @Route("admin")
  */
-class UserController extends Controller
+class AdminController extends Controller
 {
-    /**
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function loggedUserMenuAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $user = $this->container->get('security.token_storage')->getToken()->getUser();
-        $user->getId();
-
-        $loggedUser = $em->getRepository(User::class)->find($user);
-
-        return $this->render('@App/menu/logged-user.html.twig', [
-            'loggedUser' => $loggedUser,
-        ]);
-    }
-
     /**
      * Lists all user entities.
      *
