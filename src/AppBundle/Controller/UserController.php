@@ -66,6 +66,25 @@ class UserController extends Controller
     }
 
     /**
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/active/{id}", name="user_active", methods={"GET"})
+     */
+    public function activeUser($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('AppBundle:User')->find($id);
+
+        $user->setEnabled(true);
+        $em->persist($user);
+        $em->flush();
+
+        return $this->redirectToRoute('user_show', [
+            'id' => $id,
+        ]);
+    }
+
+    /**
      * Finds and displays a user entity.
      *
      * @Route("/{id}", name="user_show", methods={"GET"})
