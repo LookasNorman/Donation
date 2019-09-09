@@ -24,22 +24,4 @@ class UserController extends Controller
             'loggedUser' => $loggedUser,
         ]);
     }
-
-    /**
-     * @return \Symfony\Component\HttpFoundation\Response
-     * @Route("/admin", name="admin_page")
-     * @Security("is_granted('ROLE_ADMIN')")
-     */
-    public function adminPageAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $user = $this->container->get('security.token_storage')->getToken()->getUser();
-        $user->getId();
-
-        $loggedUser = $em->getRepository(User::class)->find($user);
-
-        return $this->render('@App/user/admin-page.html.twig', [
-            'loggedUser' => $loggedUser,
-        ]);
-    }
 }
