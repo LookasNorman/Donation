@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Institutions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for institution in institutions %}
+            <tr>
+                <td><a href="{{ path('institution_show', { 'id': institution.id }) }}">{{ institution.id }}</a></td>
+                <td>{{ institution.name }}</td>
+                <td>{{ institution.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('institution_show', { 'id': institution.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('institution_edit', { 'id': institution.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('institution_new') }}">Create a new institution</a>
+        </li>
+    </ul>
+{% endblock %}
