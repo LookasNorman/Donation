@@ -69,7 +69,7 @@ class InstitutionController extends Controller
     {
         $deleteForm = $this->createDeleteForm($institution);
 
-        return $this->render('institution/show.html.twig', array(
+        return $this->render('@App/institution/show.html.twig', array(
             'institution' => $institution,
             'delete_form' => $deleteForm->createView(),
         ));

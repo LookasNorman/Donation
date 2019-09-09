@@ -1,9 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends '@App/base.html.twig' %}
+{% block header %}
+<header class="header">
+    {% endblock %}
 
 {% block body %}
     <h1>Institution</h1>
 
-    <table>
+    <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -29,7 +32,7 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete" class="btn-danger">
             {{ form_end(delete_form) }}
         </li>
     </ul>
