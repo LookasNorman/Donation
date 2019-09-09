@@ -1,11 +1,31 @@
-{% extends 'base.html.twig' %}
+{% extends '@App/base.html.twig' %}
+{% block header %}
+<header class="header">
+    {% endblock %}
 
 {% block body %}
     <h1>Institution edit</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1">
+                {{ form_label(edit_form.name) }}
+            </div>
+            <div class="col-sm">
+                {{ form_widget(edit_form.name) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+                {{ form_label(edit_form.description) }}
+            </div>
+            <div class="col-sm">
+                {{ form_widget(edit_form.description) }}
+            </div>
+        </div>
+        <button type="submit" class="btn-primary">Edytuj</button>
+    </div>
     {{ form_end(edit_form) }}
 
     <ul>
@@ -14,7 +34,7 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete" class="btn-danger">
             {{ form_end(delete_form) }}
         </li>
     </ul>

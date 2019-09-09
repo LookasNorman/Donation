@@ -93,7 +93,7 @@ class InstitutionController extends Controller
             return $this->redirectToRoute('institution_edit', array('id' => $institution->getId()));
         }
 
-        return $this->render('institution/edit.html.twig', array(
+        return $this->render('@App/institution/edit.html.twig', array(
             'institution' => $institution,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
