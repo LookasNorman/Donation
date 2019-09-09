@@ -1,28 +1,48 @@
-{% extends 'base.html.twig' %}
+{% extends '@App/base.html.twig' %}
+{% block header %}
+<header class="header">
+    {% endblock %}
 
-{% block body %}
-    <h1>User</h1>
 
-    <table>
-        <tbody>
+    {% block body %}
+        <h1>User</h1>
+
+        <table class="table">
+            <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ user.id }}</td>
             </tr>
-        </tbody>
-    </table>
+            <tr>
+                <th>Username</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>
+                    {% for role in user.roles %}
+                        {{ role }}
+                    {% endfor %}
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-{% endblock %}
+        <ul>
+            <li>
+                <a href="{{ path('user_index') }}">Back to the list</a>
+            </li>
+            <li>
+                <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn-danger">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    {% endblock %}
