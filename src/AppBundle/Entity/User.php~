@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
 class User extends BaseUser
 {
@@ -17,6 +18,18 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    private $firstname;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    private $surname;
     
     public function __construct()
     {
@@ -53,6 +66,7 @@ class User extends BaseUser
      */
     public function setEmail($email)
     {
+        $this->setUsername($email);
         $this->email = $email;
     }
 
