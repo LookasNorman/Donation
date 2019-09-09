@@ -17,15 +17,15 @@ class AdminController extends Controller
     /**
      * Lists all user entities.
      *
-     * @Route("/", name="user_index", methods={"GET"})
+     * @Route("/", name="admin_index", methods={"GET"})
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $users = $em->getRepository('AppBundle:User')->findAll();
+        $users = $em->getRepository('AppBundle:User')->showAllAdmin();
 
-        return $this->render('user/index.html.twig', array(
+        return $this->render('@App/user/index.html.twig', array(
             'users' => $users,
         ));
     }
