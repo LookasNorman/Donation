@@ -26,7 +26,7 @@ class InstitutionController extends Controller
 
         $institutions = $em->getRepository('AppBundle:Institution')->findAll();
 
-        return $this->render('institution/index.html.twig', array(
+        return $this->render('@App/institution/index.html.twig', array(
             'institutions' => $institutions,
         ));
     }
