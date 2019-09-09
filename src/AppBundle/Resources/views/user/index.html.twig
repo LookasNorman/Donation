@@ -40,6 +40,9 @@
                             <li>
                                 <a href="{{ path('user_promote', { 'id': user.id }) }}">promote</a>
                             </li>
+                            <li>
+                                <a href="{{ path('user_deactive', { 'id': user.id }) }}">block user</a>
+                            </li>
                             {% endif %}
                         </ul>
                     </td>
