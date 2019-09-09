@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Institution;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -11,6 +12,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  * Institution controller.
  *
  * @Route("institution")
+ * @Security("is_granted('ROLE_ADMIN')")
  */
 class InstitutionController extends Controller
 {
@@ -51,7 +53,7 @@ class InstitutionController extends Controller
             return $this->redirectToRoute('institution_show', array('id' => $institution->getId()));
         }
 
-        return $this->render('institution/new.html.twig', array(
+        return $this->render('@App/institution/new.html.twig', array(
             'institution' => $institution,
             'form' => $form->createView(),
         ));
