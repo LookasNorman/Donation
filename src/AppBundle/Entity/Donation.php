@@ -373,6 +373,9 @@ class Donation
     public function __construct()
     {
         $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->setCreatedDate(new \DateTime());
+        $this->setCreatedTime(new \DateTime());
+        $this->setStatus(false);
     }
 
     /**
