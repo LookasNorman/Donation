@@ -17,6 +17,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends Controller
 {
     /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/page", name="admin_page")
+     */
+    public function adminPage()
+    {
+        return $this->render('@App/admin/base.html.twig');
+    }
+
+    /**
      * Lists all user entities.
      *
      * @Route("/", name="admin_index", methods={"GET"})

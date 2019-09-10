@@ -39,7 +39,7 @@ class UserController extends Controller
         if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
             return $this->redirectToRoute('fos_user_profile_show');
         } else {
-            return $this->redirectToRoute('admin_index');
+            return $this->redirectToRoute('admin_page');
         }
     }
 
