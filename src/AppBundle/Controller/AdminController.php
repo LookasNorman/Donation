@@ -36,10 +36,46 @@ class AdminController extends Controller
 
         $users = $em->getRepository('AppBundle:User')->showAllAdmin();
 
-        return $this->render('@App/user/index.html.twig', array(
+        return $this->render('@App/admin/index.html.twig', array(
             'users' => $users,
         ));
     }
+
+    /**
+     * Finds and displays a user entity.
+     *
+     * @Route("/{id}", name="admin_show", methods={"GET"})
+     */
+    public function showAction(User $user)
+    {
+
+        return $this->render('@App/admin/show.html.twig', array(
+            'user' => $user,
+        ));
+    }
+
+    /**
+     * Displays a form to edit an existing user entity.
+     *
+     * @Route("/{id}/edit", name="admin_edit", methods={"GET", "POST"})
+     */
+    public function editAction(Request $request, User $user)
+    {
+        $editForm = $this->createForm('AppBundle\Form\UserType', $user);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
+        }
+
+        return $this->render('@App/admin/edit.html.twig', array(
+            'user' => $user,
+            'edit_form' => $editForm->createView(),
+        ));
+    }
+
 
     /**
      * @param $id
@@ -55,9 +91,27 @@ class AdminController extends Controller
         $em->persist($user);
         $em->flush();
 
-        return $this->redirectToRoute('user_show', [
+        return $this->redirectToRoute('admin_show', [
             'id' => $id,
         ]);
     }
 
+    /**
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/demote/{id}", name="user_demote", methods={"GET"})
+     */
+    public function demoteUser($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('AppBundle:User')->find($id);
+
+        $user->removeRole("ROLE_ADMIN");
+        $em->persist($user);
+        $em->flush();
+
+        return $this->redirectToRoute('user_show', [
+            'id' => $id,
+        ]);
+    }
 }

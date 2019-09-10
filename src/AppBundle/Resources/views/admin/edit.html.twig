@@ -1,0 +1,48 @@
+{% extends '@App/admin/base.html.twig' %}
+    {% block adminPage %}
+        <h1>User edit</h1>
+
+        {{ form_start(edit_form) }}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-1">
+                    {{ form_label(edit_form.username) }}
+                </div>
+                <div class="col-sm">
+                    {{ form_widget(edit_form.username) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">
+                    {{ form_label(edit_form.email) }}
+                </div>
+                <div class="col-sm">
+                    {{ form_widget(edit_form.email) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">
+                    {{ form_label(edit_form.firstname) }}
+                </div>
+                <div class="col-sm">
+                    {{ form_widget(edit_form.firstname) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">
+                    {{ form_label(edit_form.surname) }}
+                </div>
+                <div class="col-sm">
+                    {{ form_widget(edit_form.surname) }}
+                </div>
+            </div>
+            <input type="submit" value="Edit" class="btn-primary"/>
+        </div>
+        {{ form_end(edit_form) }}
+
+        <ul>
+            <li>
+                <a href="{{ path('user_index') }}">Back to the list</a>
+            </li>
+        </ul>
+    {% endblock %}

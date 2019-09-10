@@ -1,0 +1,30 @@
+{% extends '@App/admin/base.html.twig' %}
+    {% block adminPage %}
+        <h1>User</h1>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('admin_index') }}">Back to the list</a>
+            </li>
+            <li>
+                <a href="{{ path('admin_edit', { 'id': user.id }) }}">Edit</a>
+            </li>
+        </ul>
+    {% endblock %}

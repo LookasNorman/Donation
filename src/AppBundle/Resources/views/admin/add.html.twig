@@ -1,7 +1,7 @@
 {% extends '@App/admin/base.html.twig' %}
 
     {% block adminPage %}
-        <h1>Users list</h1>
+        <h1>Admin list</h1>
 
         <table class="table">
             <thead>
@@ -9,7 +9,6 @@
                 <th>Id</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Role</th>
                 <th>Active</th>
                 <th>Actions</th>
             </tr>
@@ -17,22 +16,17 @@
             <tbody>
             {% for user in users %}
                 <tr>
-                    <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                    <td><a href="{{ path('admin_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                     <td>{{ user.username }}</td>
                     <td>{{ user.email }}</td>
-                    <td>
-                        {% for role in user.roles %}
-                            {{ role }}
-                        {% endfor %}
-                    </td>
                     <td>{{ user.enabled }}</td>
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
+                                <a href="{{ path('admin_show', { 'id': user.id }) }}">show</a>
                             </li>
                             <li>
-                                <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
+                                <a href="{{ path('admin_edit', { 'id': user.id }) }}">edit</a>
                             </li>
                             {% set path = app.request.pathinfo | trim('/') %}
                             {% if path == 'user' %}
