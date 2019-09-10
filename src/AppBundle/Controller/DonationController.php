@@ -75,6 +75,12 @@ class DonationController extends Controller
 
         $donations = $em->getRepository('AppBundle:Donation')->findBy([
             'user' => $user
+        ], [
+            'status' => 'asc',
+            'pickUpDate' => 'desc',
+            'pickUpTime' => 'desc',
+            'createdDate' => 'desc',
+            'createdTime' => 'desc'
         ]);
 
         return $this->render('@App/donation/index.html.twig', array(
