@@ -68,9 +68,12 @@ class DonationController extends Controller
      */
     public function indexAction()
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
         $em = $this->getDoctrine()->getManager();
 
-        $donations = $em->getRepository('AppBundle:Donation')->findAll();
+        $donations = $em->getRepository('AppBundle:Donation')->findBy([
+            'user' => $user
+        ]);
 
         return $this->render('@App/donation/index.html.twig', array(
             'donations' => $donations,
