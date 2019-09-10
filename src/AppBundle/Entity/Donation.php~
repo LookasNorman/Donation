@@ -89,6 +89,7 @@ class Donation
     private $pickUpComment;
 
     /**
+<<<<<<< HEAD
      * @var string
      *
      * @ORM\Column(name="phone", type="text")
@@ -115,6 +116,13 @@ class Donation
      * @ORM\Column(name="created_time", type="time")
      */
     private $createdTime;
+=======
+     * @ORM\ManyToOne(targetEntity="GiftState", inversedBy="donation")
+     * @ORM\JoinColumn(name="state_id", referencedColumnName="id")
+     */
+    private $state;
+
+>>>>>>> entity
 
     /**
      * Get id
@@ -341,6 +349,7 @@ class Donation
     {
         return $this->institution;
     }
+<<<<<<< HEAD
 
 
 
@@ -472,4 +481,6 @@ class Donation
     }
 
     
+=======
+>>>>>>> entity
 }

@@ -89,6 +89,12 @@ class Donation
     private $pickUpComment;
 
     /**
+     * @ORM\ManyToOne(targetEntity="GiftState", inversedBy="donation")
+     * @ORM\JoinColumn(name="state_id", referencedColumnName="id")
+     */
+    private $state;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="phone", type="text")
@@ -474,7 +480,7 @@ class Donation
         return $this->createdDate;
     }
 
-    
+
 
     /**
      * Set createdTime
@@ -498,5 +504,29 @@ class Donation
     public function getCreatedTime()
     {
         return $this->createdTime;
+    }
+
+    /**
+     * Set state
+     *
+     * @param \AppBundle\Entity\GiftState $state
+     *
+     * @return Donation
+     */
+    public function setState(\AppBundle\Entity\GiftState $state = null)
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return \AppBundle\Entity\GiftState
+     */
+    public function getState()
+    {
+        return $this->state;
     }
 }
