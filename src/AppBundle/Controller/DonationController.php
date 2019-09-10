@@ -5,12 +5,16 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Category;
 use AppBundle\Entity\Donation;
 use AppBundle\Entity\Institution;
-use AppBundle\Form\DonationType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Donation controller.
+ *
+ * @Route("donation")
+ */
 class DonationController extends Controller
 {
     /**
@@ -56,4 +60,33 @@ class DonationController extends Controller
     {
         return $this->render('@App/form/form-confirmation.html.twig');
     }
+
+    /**
+     * Lists all donation entities.
+     *
+     * @Route("/", name="donation_index", methods={"GET"})
+     */
+    public function indexAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $donations = $em->getRepository('AppBundle:Donation')->findAll();
+
+        return $this->render('@App/donation/index.html.twig', array(
+            'donations' => $donations,
+        ));
+    }
+
+    /**
+     * Finds and displays a donation entity.
+     *
+     * @Route("/{id}", name="donation_show", methods={"GET"})
+     */
+    public function showAction(Donation $donation)
+    {
+        return $this->render('@App/donation/show.html.twig', array(
+            'donation' => $donation,
+        ));
+    }
+
 }

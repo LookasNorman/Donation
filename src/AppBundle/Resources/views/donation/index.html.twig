@@ -1,0 +1,48 @@
+{% extends '@App/base.html.twig' %}
+{% block header %}
+<header class="header">
+    {% endblock %}
+
+{% block body %}
+    <h1>Donations list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Quantity</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>Zipcode</th>
+                <th>Pickupdate</th>
+                <th>Pickuptime</th>
+                <th>Pickupcomment</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for donation in donations %}
+            <tr>
+                <td><a href="{{ path('donation_show', { 'id': donation.id }) }}">{{ donation.id }}</a></td>
+                <td>{{ donation.quantity }}</td>
+                <td>{{ donation.street }}</td>
+                <td>{{ donation.city }}</td>
+                <td>{{ donation.zipCode }}</td>
+                <td>{% if donation.pickUpDate %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if donation.pickUpTime %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
+                <td>{{ donation.pickUpComment }}</td>
+                <td>{{ donation.phone }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('donation_show', { 'id': donation.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

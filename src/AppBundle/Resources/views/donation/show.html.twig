@@ -1,0 +1,55 @@
+{% extends '@App/base.html.twig' %}
+{% block header %}
+<header class="header">
+    {% endblock %}
+
+{% block body %}
+    <h1>Donation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ donation.id }}</td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td>{{ donation.quantity }}</td>
+            </tr>
+            <tr>
+                <th>Street</th>
+                <td>{{ donation.street }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ donation.city }}</td>
+            </tr>
+            <tr>
+                <th>Zipcode</th>
+                <td>{{ donation.zipCode }}</td>
+            </tr>
+            <tr>
+                <th>Pickupdate</th>
+                <td>{% if donation.pickUpDate %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Pickuptime</th>
+                <td>{% if donation.pickUpTime %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Pickupcomment</th>
+                <td>{{ donation.pickUpComment }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ donation.phone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('donation_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
