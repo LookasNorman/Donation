@@ -25,9 +25,11 @@ class DonationController extends Controller
      */
     public function addDonation(Request $request)
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
         $em = $this->getDoctrine()->getManager();
 
         $donation = new Donation();
+        $donation->setUser($user);
         $form = $this->createForm('AppBundle\Form\DonationType', $donation);
 
         $institutions = $em->getRepository(Institution::class)->findAll();
