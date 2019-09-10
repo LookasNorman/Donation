@@ -6,7 +6,11 @@
     <h2>Moje dane</h2>
 
 {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    {{ form_widget(form) }}
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.surname) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.current_password) }}
     <div class="form-group form-group--buttons">
         <button class="btn" type="submit">Zapisz</button>
     </div>
