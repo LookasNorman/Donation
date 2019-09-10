@@ -9,7 +9,6 @@
                 <th>Id</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Role</th>
                 <th>Active</th>
                 <th>Actions</th>
             </tr>
@@ -20,12 +19,7 @@
                     <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                     <td>{{ user.username }}</td>
                     <td>{{ user.email }}</td>
-                    <td>
-                        {% for role in user.roles %}
-                            {{ role }}
-                        {% endfor %}
-                    </td>
-                    <td>{{ user.enabled }}</td>
+                    <td>{% if user.enabled %}Aktywny{% else %}Nieaktywny{% endif %}</td>
                     <td>
                         <ul>
                             <li>

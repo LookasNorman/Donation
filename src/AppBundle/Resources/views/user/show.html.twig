@@ -1,10 +1,5 @@
-{% extends '@App/base.html.twig' %}
-{% block header %}
-<header class="header">
-    {% endblock %}
-
-
-    {% block body %}
+{% extends '@App/admin/base.html.twig' %}
+    {% block adminPage %}
         <h1>User</h1>
 
         <table class="table">
@@ -20,14 +15,6 @@
             <tr>
                 <th>Email</th>
                 <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <th>Role</th>
-                <td>
-                    {% for role in user.roles %}
-                        {{ role }}
-                    {% endfor %}
-                </td>
             </tr>
             </tbody>
         </table>
