@@ -10,6 +10,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>User</th>
                 <th>Quantity</th>
                 <th>Street</th>
                 <th>City</th>
@@ -25,6 +26,7 @@
         {% for donation in donations %}
             <tr>
                 <td><a href="{{ path('donation_show', { 'id': donation.id }) }}">{{ donation.id }}</a></td>
+                <td>{{ donation.user }}</td>
                 <td>{{ donation.quantity }}</td>
                 <td>{{ donation.street }}</td>
                 <td>{{ donation.city }}</td>

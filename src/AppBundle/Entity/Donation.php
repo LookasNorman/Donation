@@ -41,6 +41,12 @@ class Donation
     private $institution;
 
     /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="donation")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="street", type="string", length=255)
@@ -370,5 +376,29 @@ class Donation
     public function removeCategory(\AppBundle\Entity\Category $category)
     {
         $this->categories->removeElement($category);
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Donation
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

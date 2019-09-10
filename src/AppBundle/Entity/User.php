@@ -30,6 +30,11 @@ class User extends BaseUser
      * @ORM\Column(type="string")
      */
     private $surname;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Donation", mappedBy="user")
+     */
+    private $donation;
     
     public function __construct()
     {
@@ -117,5 +122,39 @@ class User extends BaseUser
     public function getSurname()
     {
         return $this->surname;
+    }
+
+    /**
+     * Add donation
+     *
+     * @param \AppBundle\Entity\Donation $donation
+     *
+     * @return User
+     */
+    public function addDonation(\AppBundle\Entity\Donation $donation)
+    {
+        $this->donation[] = $donation;
+
+        return $this;
+    }
+
+    /**
+     * Remove donation
+     *
+     * @param \AppBundle\Entity\Donation $donation
+     */
+    public function removeDonation(\AppBundle\Entity\Donation $donation)
+    {
+        $this->donation->removeElement($donation);
+    }
+
+    /**
+     * Get donation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDonation()
+    {
+        return $this->donation;
     }
 }
