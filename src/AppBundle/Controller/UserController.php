@@ -31,6 +31,19 @@ class UserController extends Controller
     }
 
     /**
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/logged")
+     */
+    public function loggedRedirect()
+    {
+        if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
+            return $this->redirectToRoute('fos_user_profile_show');
+        } else {
+            return $this->redirectToRoute('admin_index');
+        }
+    }
+
+    /**
      * Lists all user entities.
      *
      * @Route("/", name="user_index", methods={"GET"})
