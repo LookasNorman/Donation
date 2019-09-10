@@ -1,25 +1,21 @@
-{% extends '@App/base.html.twig' %}
-{% block header %}
-<header class="header">
-    {% endblock %}
-
-{% block body %}
+{% extends '@App/admin/base.html.twig' %}
+{% block adminPage %}
     <h1>Institution</h1>
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ institution.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ institution.name }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ institution.description }}</td>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ institution.id }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ institution.name }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ institution.description }}</td>
+        </tr>
         </tbody>
     </table>
 
@@ -32,7 +28,7 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete" class="btn-danger">
+            <input type="submit" value="Delete" class="btn-danger">
             {{ form_end(delete_form) }}
         </li>
     </ul>

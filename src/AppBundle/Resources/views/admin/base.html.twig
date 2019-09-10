@@ -83,6 +83,21 @@
             </div>
         </li>
 
+        <!-- Nav Item - Institution Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInstitution" aria-expanded="true" aria-controls="collapseInstitution">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Instytucje</span>
+            </a>
+            <div id="collapseInstitution" class="collapse" aria-labelledby="headingInstitution" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Zarządzaj:</h6>
+                    <a class="collapse-item" href="{{path('institution_index')}}">Wyświetl</a>
+                    <a class="collapse-item" href="{{path('institution_new')}}">Utwórz</a>
+                </div>
+            </div>
+        </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider">
 
