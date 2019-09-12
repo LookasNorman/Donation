@@ -1,0 +1,39 @@
+{% extends '@App/admin/base.html.twig' %}
+
+{% block adminPage %}
+    <h1>Giftstates list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>State</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for giftState in giftStates %}
+            <tr>
+                <td><a href="{{ path('giftstate_show', { 'id': giftState.id }) }}">{{ giftState.id }}</a></td>
+                <td>{{ giftState.state }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('giftstate_show', { 'id': giftState.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('giftstate_edit', { 'id': giftState.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('giftstate_new') }}">Create a new giftState</a>
+        </li>
+    </ul>
+{% endblock %}
