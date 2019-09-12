@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Category;
 use AppBundle\Entity\Donation;
+use AppBundle\Entity\GiftState;
 use AppBundle\Entity\Institution;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -26,9 +27,13 @@ class DonationController extends Controller
     public function addDonation(Request $request)
     {
         $user = $this->container->get('security.token_storage')->getToken()->getUser();
+
         $em = $this->getDoctrine()->getManager();
 
+        $giftState = $em->getRepository(GiftState::class)->findOneBy(['state' => 'Złożone']);
+
         $donation = new Donation();
+        $donation->setState($giftState);
         $donation->setUser($user);
         $form = $this->createForm('AppBundle\Form\DonationType', $donation);
 
