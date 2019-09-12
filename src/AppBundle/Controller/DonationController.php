@@ -81,7 +81,7 @@ class DonationController extends Controller
         $donations = $em->getRepository('AppBundle:Donation')->findBy([
             'user' => $user
         ], [
-            'status' => 'asc',
+            'state' => 'asc',
             'pickUpDate' => 'desc',
             'pickUpTime' => 'desc',
             'createdDate' => 'desc',

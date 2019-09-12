@@ -29,11 +29,7 @@
                     <td><a href="{{ path('donation_show', { 'id': donation.id }) }}">{{ donation.id }}</a></td>
                     <td>{{ donation.user }}</td>
                     <td>
-                        {% if donation.status %}
-                            Odebrane
-                        {% else %}
-                            Nieodebrane
-                        {% endif %}
+                        {{donation.state.state}}
                     </td>
                     <td>{{ donation.quantity }}</td>
                     <td>{{ donation.street }}</td>
