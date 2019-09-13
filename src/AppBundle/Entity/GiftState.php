@@ -29,7 +29,7 @@ class GiftState
     private $state;
 
     /**
-     * @ORM\OneToMany(targetEntity="GiftState", mappedBy="state")
+     * @ORM\OneToMany(targetEntity="Donation", mappedBy="state")
      */
     private $donation;
 
