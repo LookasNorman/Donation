@@ -15,11 +15,7 @@
             <tr>
                 <th>Status</th>
                 <td>
-                    {% if donation.status %}
-                        Odebrane
-                    {% else %}
-                        Nieodebrane
-                    {% endif %}
+                    {{ render(controller('AppBundle:Donation:changeState', {'id': donation.id} ))}}
                 </td>
             </tr>
             <tr>

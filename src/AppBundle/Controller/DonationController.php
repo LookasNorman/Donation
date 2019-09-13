@@ -6,6 +6,7 @@ use AppBundle\Entity\Category;
 use AppBundle\Entity\Donation;
 use AppBundle\Entity\GiftState;
 use AppBundle\Entity\Institution;
+use AppBundle\Form\DonationStateType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -105,4 +106,27 @@ class DonationController extends Controller
         ));
     }
 
+    /**
+     * @param Request $request
+     * @param Donation $donation
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     * @Route("/{id}", name="donation_state", methods={"GET", "POST"})
+     */
+    public function changeStateAction(Request $request, Donation $donation)
+    {
+        $editForm = $this->createForm('AppBundle\Form\DonationStateType', $donation);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('donation_show', array('id' => $donation->getId()));
+        }
+
+        return $this->render('@App/donation/changeState.html.twig', array(
+            'donation' => $donation,
+            'edit_form' => $editForm->createView(),
+        ));
+    }
 }
