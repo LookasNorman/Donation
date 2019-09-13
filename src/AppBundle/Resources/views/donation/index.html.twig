@@ -35,8 +35,8 @@
                     <td>{{ donation.street }}</td>
                     <td>{{ donation.city }}</td>
                     <td>{{ donation.zipCode }}</td>
-                    <td>{% if (donation.pickUpDate) and (donation.status) %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
-                    <td>{% if donation.pickUpTime and (donation.status) %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
+                    <td>{% if (donation.pickUpDate) %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
+                    <td>{% if donation.pickUpTime %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
                     <td>{{ donation.pickUpComment }}</td>
                     <td>{{ donation.phone }}</td>
                     <td>

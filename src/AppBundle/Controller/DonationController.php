@@ -118,7 +118,9 @@ class DonationController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-
+            $date = new \DateTime();
+            $donation->setPickUpDate($date);
+            $donation->setPickUpTime($date);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('donation_show', array('id' => $donation->getId()));
