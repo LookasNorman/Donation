@@ -6,24 +6,24 @@
     {% block body %}
         <h1>Donation</h1>
 
-        <table class="table">
+        <table class="table-striped table-bordered">
             <tbody>
             <tr>
-                <th>Id</th>
+                <th scope="row">Id</th>
                 <td>{{ donation.id }}</td>
             </tr>
             <tr>
-                <th>Status</th>
+                <th scope="row">Status</th>
                 <td>
-                    {{ render(controller('AppBundle:Donation:changeState', {'id': donation.id} ))}}
+                    {{ render(controller('AppBundle:Donation:changeState', {'id': donation.id} )) }}
                 </td>
             </tr>
             <tr>
-                <th>Institution</th>
+                <th scope="row">Institution</th>
                 <td>{{ donation.institution.name }}</td>
             </tr>
             <tr>
-                <th>Created</th>
+                <th scope="row">Created</th>
                 <td>
                     {% if donation.createdDate %}
                         {{ donation.createdDate|date('Y-m-d') }}
@@ -35,7 +35,7 @@
             </tr>
 
             <tr>
-                <th>Gifts</th>
+                <th scope="row">Gifts</th>
                 <td>
                     {% for gift in donation.categories %}
                         {{ gift.name }}
@@ -43,21 +43,19 @@
                 </td>
             </tr>
             <tr>
-                <th>Quantity</th>
+                <th scope="row">Quantity</th>
                 <td>{{ donation.quantity }}</td>
             </tr>
-            {% if donation.status %}
-                <tr>
-                    <th>Pickupdate</th>
-                    <td>{% if donation.pickUpDate %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
-                </tr>
-                <tr>
-                    <th>Pickuptime</th>
-                    <td>{% if donation.pickUpTime %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
-                </tr>
-            {% endif %}
             <tr>
-                <th>Pickupcomment</th>
+                <th scope="row">Pickupdate</th>
+                <td>{% if donation.pickUpDate %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th scope="row">Pickuptime</th>
+                <td>{% if donation.pickUpTime %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th scope="row">Pickupcomment</th>
                 <td>{{ donation.pickUpComment }}</td>
             </tr>
             </tbody>
