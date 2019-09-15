@@ -51,4 +51,16 @@ $(function () {
             jQuery.strength(jQuery("#progress-bar"), jQuery(this).val());
         });
     });
+
+    jQuery(function() {
+        jQuery("#fos_user_resetting_form_plainPassword_first").keyup(function() {
+            jQuery.strength(jQuery("#progress-bar"), jQuery(this).val());
+        });
+    });
+
+    jQuery(function() {
+        jQuery("#fos_user_change_password_form_plainPassword_first").keyup(function() {
+            jQuery.strength(jQuery("#progress-bar"), jQuery(this).val());
+        });
+    });
 })
