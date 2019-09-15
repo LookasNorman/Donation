@@ -11,6 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Swift_SmtpTransport;
 
 /**
  * Donation controller.
@@ -48,7 +49,9 @@ class DonationController extends Controller
             $em->persist($donation);
             $em->flush();
 
-            return $this->redirectToRoute('added_donation');
+            return $this->redirectToRoute('added_donation', [
+                'id' => $donation->getId()
+            ]);
         }
 
         return $this->render('@App/form/form.html.twig', array(
@@ -64,8 +67,14 @@ class DonationController extends Controller
      * @Route("/formConfirmation", name="added_donation")
      * @Security("is_granted('ROLE_USER')")
      */
-    public function addedDonation()
+    public function addedDonation(Request $request)
     {
+        $id = $request->query->get('id');
+        $donation = $this->getDoctrine()
+            ->getManager()
+            ->getRepository(Donation::class)
+            ->find($id);
+        $this->sendEmailAction($donation);
         return $this->render('@App/form/form-confirmation.html.twig');
     }
 
@@ -130,5 +139,22 @@ class DonationController extends Controller
             'donation' => $donation,
             'edit_form' => $editForm->createView(),
         ));
+    }
+
+    public function sendEmailAction($donation)
+    {
+        $message = (new \Swift_Message('Dziękujemy za złożenie darowizny'))
+            ->setFrom('lkonieczny@zwdmalec.pl')
+            ->setTo($donation->getUser()->getEmail())
+            ->setBody(
+                $this->renderView('@App/Emails/donation.html.twig', [
+                    'donation' => $donation
+                ]),
+                'text/html'
+            )
+        ;
+        $this->get('mailer')->send($message);
+
+//        return $this->render(...);
     }
 }
