@@ -5,15 +5,26 @@
     <h2>Załóż konto</h2>
 
     {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
+    <div class="form-group">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+    </div>
+    <div class="form-group">
+        {{ form_rest(form.plainPassword) }}
+        <div id="progressBar">
+            <div id="progress-bar"></div>
+        </div>
+    </div>
     <div class="form-group form-group--buttons">
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <a href="{{ path('fos_user_security_logout') }}" class="btn btn--without-border">
                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
             </a>
         {% else %}
-            <a href="{{ path('fos_user_security_login') }}" class="btn btn--without-border">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            <a href="{{ path('fos_user_security_login') }}"
+               class="btn btn--without-border">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
         {% endif %}
+
         <button class="btn" type="submit">Załóż konto</button>
     </div>
 </section>

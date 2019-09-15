@@ -1850,3 +1850,31 @@ footer .bottom-line--icons a img {
 a.bg-info:focus, a.bg-info:hover, button.bg-info:focus, button.bg-info:hover {
   background-color: #2a96a5 !important
 }
+
+#progressBar {
+  height: 20px;
+  width: 100%;
+  margin-top: 0.6em;
+  border-radius:50px;
+  border:2px solid #ddd
+}
+
+#progress-bar {
+  width: 0%;
+  height: 100%;
+  transition: width 500ms linear;
+  border-radius:50px;
+  box-shadow:0px 1px 5px #555
+}
+
+.progress-bar-danger {
+  background: #d00;
+}
+
+.progress-bar-warning {
+  background: #f50;
+}
+
+.progress-bar-success {
+  background: #080;
+}
