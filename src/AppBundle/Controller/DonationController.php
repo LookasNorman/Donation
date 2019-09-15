@@ -151,10 +151,7 @@ class DonationController extends Controller
                     'donation' => $donation
                 ]),
                 'text/html'
-            )
-        ;
+            );
         $this->get('mailer')->send($message);
-
-//        return $this->render(...);
     }
 }
