@@ -34,7 +34,8 @@
 {%- block number_widget -%}
     <div class="form-group form-group--inline">
         <label>
-            Liczba 60l worków:
+{#            Liczba 60l worków:#}
+            {{- form_label(form) -}}
             {# type="number" doesn't work with floats in localized formats #}
             {%- set type = type|default('text') -%}
             {{ block('form_widget_simple') }}

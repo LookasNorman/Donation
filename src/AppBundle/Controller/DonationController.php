@@ -11,6 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Swift_SmtpTransport;
 
 /**
  * Donation controller.
@@ -47,7 +48,8 @@ class DonationController extends Controller
 
             $em->persist($donation);
             $em->flush();
-
+            $subject = 'Złożyłeś darowiznę';
+            $this->sendEmailAction($donation, $subject);
             return $this->redirectToRoute('added_donation');
         }
 
@@ -64,7 +66,7 @@ class DonationController extends Controller
      * @Route("/formConfirmation", name="added_donation")
      * @Security("is_granted('ROLE_USER')")
      */
-    public function addedDonation()
+    public function addedDonation(Request $request)
     {
         return $this->render('@App/form/form-confirmation.html.twig');
     }
@@ -122,6 +124,8 @@ class DonationController extends Controller
             $donation->setPickUpDate($date);
             $donation->setPickUpTime($date);
             $this->getDoctrine()->getManager()->flush();
+            $subject = 'Twoja darowizna zmieniła status';
+            $this->sendEmailAction($donation, $subject);
 
             return $this->redirectToRoute('donation_show', array('id' => $donation->getId()));
         }
@@ -130,5 +134,19 @@ class DonationController extends Controller
             'donation' => $donation,
             'edit_form' => $editForm->createView(),
         ));
+    }
+
+    public function sendEmailAction($donation, $subject)
+    {
+        $message = (new \Swift_Message($subject))
+            ->setFrom('lkonieczny@zwdmalec.pl')
+            ->setTo($donation->getUser()->getEmail())
+            ->setBody(
+                $this->renderView('@App/Emails/donation.html.twig', [
+                    'donation' => $donation
+                ]),
+                'text/html'
+            );
+        $this->get('mailer')->send($message);
     }
 }

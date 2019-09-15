@@ -1,0 +1,55 @@
+<h1>Donation</h1>
+<h3 class="bg-info">Twoja darowizna</h3>
+<table class="table">
+    <tbody>
+    <tr>
+        <th>Id</th>
+        <td>{{ donation.id }}</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>
+            {{ donation.state.state }}
+        </td>
+    </tr>
+    <tr>
+        <th>Institution</th>
+        <td>{{ donation.institution.name }}</td>
+    </tr>
+    <tr>
+        <th>Created</th>
+        <td>
+            {% if donation.createdDate %}
+                {{ donation.createdDate|date('Y-m-d') }}
+            {% endif %}
+            {% if donation.createdTime %}
+                {{ donation.createdTime|date('H:i:s') }}
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <th>Gifts</th>
+        <td>
+            {% for gift in donation.categories %}
+                {{ gift.name }}
+            {% endfor %}
+        </td>
+    </tr>
+    <tr>
+        <th>Quantity</th>
+        <td>{{ donation.quantity }}</td>
+    </tr>
+    <tr>
+        <th>Pickupdate</th>
+        <td>{% if donation.pickUpDate %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
+    </tr>
+    <tr>
+        <th>Pickuptime</th>
+        <td>{% if donation.pickUpTime %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
+    </tr>
+    <tr>
+        <th>Pickupcomment</th>
+        <td>{{ donation.pickUpComment }}</td>
+    </tr>
+    </tbody>
+</table>

@@ -49,7 +49,7 @@ class DonationType extends AbstractType
                     'step' => 1,
                     'min' => 1,
                 ],
-                'label' => false,
+                'label' => 'Liczba 60l worków:',
             ])
             ->add('street', TextType::class, [
                 'required' => true,
