@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -18,6 +19,21 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @Assert\Length(
+     *     min=8,
+     *     max=100,
+     *     minMessage="user.password.short",
+     *     groups={"Profile", "ResetPassword", "Registration", "ChangePassword"}
+     * )
+     * @Assert\Regex(
+     *     pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.*\s).{8,100}$/",
+     *     message="user.password.difficulty",
+     *     groups={"Profile", "ResetPassword", "Registration", "ChangePassword"}
+     * )
+     */
+    protected $plainPassword;
 
     /**
      * @var string

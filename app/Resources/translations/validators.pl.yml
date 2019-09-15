@@ -1,0 +1,4 @@
+user:
+  password:
+    short: 'Hasło musi mieć conajmniej 8 znaków.'
+    difficulty: 'Hasło musi zawierać conajmniej jedną małą literą, jedną dużą, jedną cyfrę i znak specjalny.'

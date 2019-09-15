@@ -1,0 +1,4 @@
+user:
+  password:
+    short: 'Password must be at least 8 characters long.'
+    difficulty: 'Password must contain aA-zZ and number 0-9'
