@@ -1,7 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 <section class="login-page">
     <h2>{{ 'Przypomnij hasło'|trans }}</h2>
-    <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+    <form action="{{ path('check_email') }}" method="POST" class="fos_user_resetting_request">
         <div class="form-group">
             <label for="username">{{ 'resetting.request.username'|trans }}</label>
             <input type="text" id="username" name="username" required="required"/>

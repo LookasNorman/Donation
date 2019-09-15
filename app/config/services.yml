@@ -48,3 +48,9 @@ services:
     AppBundle\Controller\ProfileController:
         arguments:
             $formFactory: '@fos_user.profile.form.factory'
+
+    AppBundle\Controller\ResettingController:
+        arguments:
+            $formFactory: '@fos_user.profile.form.factory'
+            $mailer: '@fos_user.mailer.twig_swift'
+            $retryTtl: 7200
