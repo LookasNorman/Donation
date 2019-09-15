@@ -1,5 +1,5 @@
 <h1>Donation</h1>
-<h3 class="bg-info">Złożyłeś nastepującą darowiznę</h3>
+<h3 class="bg-info">Twoja darowizna</h3>
 <table class="table">
     <tbody>
     <tr>
@@ -39,23 +39,17 @@
         <th>Quantity</th>
         <td>{{ donation.quantity }}</td>
     </tr>
-    {% if donation.status %}
-        <tr>
-            <th>Pickupdate</th>
-            <td>{% if donation.pickUpDate %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
-        </tr>
-        <tr>
-            <th>Pickuptime</th>
-            <td>{% if donation.pickUpTime %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
-        </tr>
-    {% endif %}
+    <tr>
+        <th>Pickupdate</th>
+        <td>{% if donation.pickUpDate %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
+    </tr>
+    <tr>
+        <th>Pickuptime</th>
+        <td>{% if donation.pickUpTime %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
+    </tr>
     <tr>
         <th>Pickupcomment</th>
         <td>{{ donation.pickUpComment }}</td>
     </tr>
     </tbody>
 </table>
-
-<p>Spakuj wszystko do 60 litrowych worków.</p>
-<p>Kurier przyjedzie: {% if donation.pickUpDate %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}. Wcześniej będzie
-    się kontaktował telefonicznie.</p>

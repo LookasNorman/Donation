@@ -48,10 +48,9 @@ class DonationController extends Controller
 
             $em->persist($donation);
             $em->flush();
-
-            return $this->redirectToRoute('added_donation', [
-                'id' => $donation->getId()
-            ]);
+            $subject = 'Złożyłeś darowiznę';
+            $this->sendEmailAction($donation, $subject);
+            return $this->redirectToRoute('added_donation');
         }
 
         return $this->render('@App/form/form.html.twig', array(
@@ -69,12 +68,6 @@ class DonationController extends Controller
      */
     public function addedDonation(Request $request)
     {
-        $id = $request->query->get('id');
-        $donation = $this->getDoctrine()
-            ->getManager()
-            ->getRepository(Donation::class)
-            ->find($id);
-        $this->sendEmailAction($donation);
         return $this->render('@App/form/form-confirmation.html.twig');
     }
 
@@ -131,6 +124,8 @@ class DonationController extends Controller
             $donation->setPickUpDate($date);
             $donation->setPickUpTime($date);
             $this->getDoctrine()->getManager()->flush();
+            $subject = 'Twoja darowizna zmieniła status';
+            $this->sendEmailAction($donation, $subject);
 
             return $this->redirectToRoute('donation_show', array('id' => $donation->getId()));
         }
@@ -141,9 +136,9 @@ class DonationController extends Controller
         ));
     }
 
-    public function sendEmailAction($donation)
+    public function sendEmailAction($donation, $subject)
     {
-        $message = (new \Swift_Message('Dziękujemy za złożenie darowizny'))
+        $message = (new \Swift_Message($subject))
             ->setFrom('lkonieczny@zwdmalec.pl')
             ->setTo($donation->getUser()->getEmail())
             ->setBody(
