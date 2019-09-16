@@ -103,6 +103,11 @@ class DonationController extends Controller
      */
     public function showAction(Donation $donation)
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $donationOwner = $donation->getUser();
+        if($user != $donationOwner){
+            return $this->redirectToRoute('donation_index');
+        }
         return $this->render('@App/donation/show.html.twig', array(
             'donation' => $donation,
         ));
