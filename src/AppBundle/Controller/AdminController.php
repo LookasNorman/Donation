@@ -86,7 +86,6 @@ class AdminController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('AppBundle:User')->find($id);
-
         $user->addRole("ROLE_ADMIN");
         $em->persist($user);
         $em->flush();
@@ -103,9 +102,14 @@ class AdminController extends Controller
      */
     public function demoteUser($id)
     {
+        $admin = $this->container->get('security.token_storage')->getToken()->getUser();
+
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('AppBundle:User')->find($id);
-
+        //Blocking removal of yours rights
+        if( $admin == $user) {
+            return $this->redirectToRoute('admin_index');
+        }
         $user->removeRole("ROLE_ADMIN");
         $em->persist($user);
         $em->flush();
