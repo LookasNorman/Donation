@@ -51,3 +51,6 @@ donation:
     confirm:
       title: 'Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
         informacje o odbiorze.'
+  change-state:
+    button:
+      confirm: 'Zmień'
