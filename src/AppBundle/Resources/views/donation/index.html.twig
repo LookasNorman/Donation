@@ -4,23 +4,23 @@
     {% endblock %}
 
     {% block body %}
-        <h1>Donations list</h1>
+        <h1>{% trans %}donation.index.title{% endtrans %}</h1>
 
         <table class="table-striped table-bordered">
             <thead>
             <tr class="bg-info">
-                <th scope="col">Id</th>
-                <th scope="col">User</th>
-                <th scope="col">Status</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Street</th>
-                <th scope="col">City</th>
-                <th scope="col">Zipcode</th>
-                <th scope="col">Pickupdate</th>
-                <th scope="col">Pickuptime</th>
-                <th scope="col">Pickupcomment</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Actions</th>
+                <th scope="col">{% trans %}donation.index.id{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.user{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.state{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.quantity{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.street{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.city{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.zipcode{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.date{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.time{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.comment{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.phone{% endtrans %}</th>
+                <th scope="col">{% trans %}donation.index.action{% endtrans %}</th>
             </tr>
             </thead>
             <tbody>
@@ -42,7 +42,7 @@
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('donation_show', { 'id': donation.id }) }}">show</a>
+                                <a href="{{ path('donation_show', { 'id': donation.id }) }}">{% trans %}donation.index.link.show{% endtrans %}</a>
                             </li>
                         </ul>
                     </td>
@@ -50,5 +50,4 @@
             {% endfor %}
             </tbody>
         </table>
-
     {% endblock %}

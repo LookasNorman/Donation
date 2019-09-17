@@ -54,3 +54,19 @@ donation:
   change-state:
     button:
       confirm: 'Zmień'
+  index:
+    title: 'Lista darów'
+    id: 'Lp'
+    user: 'Użytkownik'
+    state: 'Status'
+    quantity: 'Ilość worków'
+    street: 'Ulica'
+    city: 'Miejscowość'
+    zipcode: 'Kod pocztowy'
+    date: 'Data odbioru'
+    time: 'Godzina odbioru'
+    comment: 'Uwagi dla kuriera'
+    phone: 'Numer telefonu'
+    action: 'Akcja'
+    link:
+      show: 'Szczegóły'
