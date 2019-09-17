@@ -48,3 +48,6 @@ donation:
         subtitle: 'Dla fundacji'
       address: 'Adres odbioru'
       pickup: 'Termin odbioru'
+    confirm:
+      title: 'Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
+        informacje o odbiorze.'
