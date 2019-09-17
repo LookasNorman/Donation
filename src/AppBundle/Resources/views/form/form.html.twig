@@ -8,24 +8,24 @@
     <div class="slogan container container--90">
         <div class="slogan--item">
             <h1>
-                Oddaj rzeczy, których już nie chcesz<br/>
-                <span class="uppercase">potrzebującym</span>
+                {% trans %}donation.form.slogan.text{% endtrans %}<br/>
+                <span class="uppercase">{% trans %}donation.form.slogan.upper{% endtrans %}</span>
             </h1>
 
             <div class="slogan--steps">
-                <div class="slogan--steps-title">Wystarczą 4 proste kroki:</div>
+                <div class="slogan--steps-title">{% trans %}donation.form.steps.title{% endtrans %}:</div>
                 <ul class="slogan--steps-boxes">
                     <li>
-                        <div><em>1</em><span>Wybierz rzeczy</span></div>
+                        <div><em>1</em><span>{% trans %}donation.form.steps.one{% endtrans %}</span></div>
                     </li>
                     <li>
-                        <div><em>2</em><span>Spakuj je w worki</span></div>
+                        <div><em>2</em><span>{% trans %}donation.form.steps.two{% endtrans %}</span></div>
                     </li>
                     <li>
-                        <div><em>3</em><span>Wybierz fundację</span></div>
+                        <div><em>3</em><span>{% trans %}donation.form.steps.three{% endtrans %}</span></div>
                     </li>
                     <li>
-                        <div><em>4</em><span>Zamów kuriera</span></div>
+                        <div><em>4</em><span>{% trans %}donation.form.steps.four{% endtrans %}</span></div>
                     </li>
                 </ul>
             </div>
@@ -37,136 +37,128 @@
     <section class="form--steps">
         <div class="form--steps-instructions">
             <div class="form--steps-container">
-                <h3>Ważne!</h3>
+                <h3>{% trans %}donation.form.steps.instruction.title{% endtrans %}</h3>
                 <p data-step="1" class="active">
-                    Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
-                    wiedzieć komu najlepiej je przekazać.
+                    {% trans %}donation.form.steps.instruction.one{% endtrans %}
                 </p>
                 <p data-step="2">
-                    Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
-                    wiedzieć komu najlepiej je przekazać.
+                    {% trans %}donation.form.steps.instruction.two{% endtrans %}
                 </p>
                 <p data-step="3">
-                    Wybierz jedną, do
-                    której trafi Twoja przesyłka.
+                    {% trans %}donation.form.steps.instruction.three{% endtrans %}
                 </p>
-                <p data-step="4">Podaj adres oraz termin odbioru rzeczy.</p>
+                <p data-step="4">{% trans %}donation.form.steps.instruction.four{% endtrans %}</p>
             </div>
         </div>
 
         <div class="form--steps-container">
-            <div class="form--steps-counter">Krok <span>1</span>/4</div>
-{% form_theme form '@App/form/donation.html.twig' %}
-{#            <form action="{{ path('add_donation') }}" method="post">#}
-                            {{ form_start(form) }}
+            <div class="form--steps-counter">{% trans %}donation.form.steps.step{% endtrans %} <span>1</span>/4</div>
+                {% form_theme form '@App/form/donation.html.twig' %}
+                {{ form_start(form) }}
                 <!-- STEP 1: class .active is switching steps -->
                 <div data-step="1" class="active">
-                    <h3>Zaznacz co chcesz oddać:</h3>
+                    <h3>{% trans %}donation.form.steps.subtitle.one{% endtrans %}:</h3>
                         {{ form_widget(form.categories) }}
                     <div class="form-group form-group--buttons">
-                        <button type="button" class="btn next-step">Dalej</button>
+                        <button type="button" class="btn next-step">{% trans %}donation.form.button.next{% endtrans %}</button>
                     </div>
                 </div>
 
                 <!-- STEP 2 -->
                 <div data-step="2">
-                    <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
+                    <h3>{% trans %}donation.form.steps.subtitle.two{% endtrans %}:</h3>
                         {{ form_widget(form.quantity) }}
                     <div class="form-group form-group--buttons">
-                        <button type="button" class="btn prev-step">Wstecz</button>
-                        <button type="button" class="btn next-step">Dalej</button>
+                        <button type="button" class="btn prev-step">{% trans %}donation.form.button.previous{% endtrans %}</button>
+                        <button type="button" class="btn next-step">{% trans %}donation.form.button.next{% endtrans %}</button>
                     </div>
                 </div>
 
                 <!-- STEP 3 -->
                 <div data-step="3">
-                    <h3>Wybierz organizacje, której chcesz pomóc:</h3>
+                    <h3>{% trans %}donation.form.steps.subtitle.three{% endtrans %}:</h3>
                         {{ form_widget(form.institution) }}
                     <div class="form-group form-group--buttons">
-                        <button type="button" class="btn prev-step">Wstecz</button>
-                        <button type="button" class="btn next-step">Dalej</button>
+                        <button type="button" class="btn prev-step">{% trans %}donation.form.button.previous{% endtrans %}</button>
+                        <button type="button" class="btn next-step">{% trans %}donation.form.button.next{% endtrans %}</button>
                     </div>
                 </div>
 
-                <!-- STEP 5 -->
+                <!-- STEP 4 -->
                 <div data-step="4">
-                    <h3>Podaj adres oraz termin odbioru rzecz przez kuriera:</h3>
+                    <h3>{% trans %}donation.form.steps.subtitle.four{% endtrans %}:</h3>
 
                     <div class="form-section form-section--columns">
 
                         <div class="form-section--column">
-                            <h4>Adres odbioru</h4>
+                            <h4>{% trans %}donation.form.steps.step-four.address.title{% endtrans %}</h4>
                             <div class="form-group form-group--inline">
-                                <label> Ulica {{form_widget(form.street)}} </label>
+                                <label>{% trans %}donation.form.steps.step-four.address.street{% endtrans %} {{form_widget(form.street)}} </label>
                             </div>
 
                             <div class="form-group form-group--inline">
-                                <label> Miasto {{form_widget(form.city)}} </label>
+                                <label>{% trans %}donation.form.steps.step-four.address.city{% endtrans %} {{form_widget(form.city)}} </label>
                             </div>
 
                             <div class="form-group form-group--inline">
-                                <label> Kod pocztowy {{form_widget(form.zipCode)}} </label>
+                                <label>{% trans %}donation.form.steps.step-four.address.zipcode{% endtrans %} {{form_widget(form.zipCode)}} </label>
                             </div>
 
                             <div class="form-group form-group--inline">
-                                <label> Numer telefonu {{form_widget(form.phone)}} </label>
+                                <label>{% trans %}donation.form.steps.step-four.address.phone{% endtrans %} {{form_widget(form.phone)}} </label>
                             </div>
                         </div>
 
                         <div class="form-section--column">
-                            <h4>Termin odbioru</h4>
+                            <h4>{% trans %}donation.form.steps.step-four.pickup.title{% endtrans %}</h4>
                             <div class="form-group form-group--inline">
-                                <label> Data
+                                <label>{% trans %}donation.form.steps.step-four.pickup.date{% endtrans %}
                                     {{ form_widget(form.pickUpDate) }}
 {#                                    <input type="date" name="pickUpDate"/>#}
                                 </label>
                             </div>
 
                             <div class="form-group form-group--inline">
-                                <label> Godzina {{form_widget(form.pickUpTime)}} </label>
+                                <label>{% trans %}donation.form.steps.step-four.pickup.time{% endtrans %} {{form_widget(form.pickUpTime)}} </label>
                             </div>
 
                             <div class="form-group form-group--inline">
                                 <label>
-                                    Uwagi dla kuriera
+                                    {% trans %}donation.form.steps.step-four.pickup.comment{% endtrans %}
                                     {{form_widget(form.pickUpComment)}}
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group form-group--buttons">
-                        <button type="button" class="btn prev-step">Wstecz</button>
-                        <button type="button" class="btn next-step">Dalej</button>
+                        <button type="button" class="btn prev-step">{% trans %}donation.form.button.previous{% endtrans %}</button>
+                        <button type="button" class="btn next-step">{% trans %}donation.form.button.next{% endtrans %}</button>
                     </div>
                 </div>
 
-                <!-- STEP 6 -->
+                <!-- STEP 5 -->
                 <div data-step="5">
-                    <h3>Podsumowanie Twojej darowizny</h3>
+                    <h3>{% trans %}donation.form.step-five.title{% endtrans %}</h3>
 
                     <div class="summary">
                         <div class="form-section">
-                            <h4>Oddajesz:</h4>
+                            <h4>{% trans %}donation.form.step-five.summary.title{% endtrans %}:</h4>
                             <ul>
                                 <li>
                                     <span class="icon icon-bag"></span>
-                                    <span class="summary--text"
-                                    ><span id="quantity-summary"></span> worki <span id="category-summary"></span></span
-                                    >
+                                    <span class="summary--text"><span id="quantity-summary"></span> {% trans %}donation.form.step-five.summary.bags{% endtrans %} <span id="category-summary"></span></span>
                                 </li>
-
                                 <li>
                                     <span class="icon icon-hand"></span>
-                                    <span class="summary--text"
-                                    >Dla fundacji <span id="institution-summary">"Mam marzenie" w Warszawie</span></span
-                                    >
+                                    <span class="summary--text">{% trans %}donation.form.step-five.summary.subtitle{% endtrans %}
+                                    <span id="institution-summary"></span></span>
                                 </li>
                             </ul>
                         </div>
 
                         <div class="form-section form-section--columns">
                             <div class="form-section--column">
-                                <h4>Adres odbioru:</h4>
+                                <h4>{% trans %}donation.form.step-five.address{% endtrans %}:</h4>
                                 <ul>
                                     <li id="street-summary"></li>
                                     <li id="city-summary"></li>
@@ -176,7 +168,7 @@
                             </div>
 
                             <div class="form-section--column">
-                                <h4>Termin odbioru:</h4>
+                                <h4>{% trans %}donation.form.step-five.pickup{% endtrans %}:</h4>
                                 <ul>
                                     <li id="date-summary"></li>
                                     <li id="time-summary"></li>
@@ -187,14 +179,13 @@
                     </div>
 
                     <div class="form-group form-group--buttons">
-                        <button type="button" class="btn prev-step">Wstecz</button>
-                        <button type="submit" class="btn">Potwierdzam</button>
+                        <button type="button" class="btn prev-step">{% trans %}donation.form.button.previous{% endtrans %}</button>
+                        <button type="submit" class="btn">{% trans %}donation.form.button.confirm{% endtrans %}</button>
                     </div>
                 </div>
                 {{ form_widget(form._token) }}
                 {{ form_errors(form) }}
-                {#            {{ form_end(form) }}#}
-            </form>
+            {{ form_end(form) }}
         </div>
     </section>
 {% endblock %}

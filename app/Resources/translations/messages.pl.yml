@@ -1,0 +1,50 @@
+donation:
+  form:
+    slogan:
+      text: 'Oddaj rzeczy, których już nie chcesz'
+      upper: 'potrzebującym'
+    steps:
+      title: 'Wystarczą 4 proste kroki'
+      one: 'Wybierz rzeczy'
+      two: 'Spakuj je w worki'
+      three: 'Wybierz fundację'
+      four: 'Zamów kuriera'
+      step: 'Krok'
+      instruction:
+        title: 'Ważne!'
+        one: 'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
+          wiedzieć komu najlepiej je przekazać.'
+        two: 'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
+          wiedzieć komu najlepiej je przekazać.'
+        three: 'Wybierz jedną, do
+          której trafi Twoja przesyłka.'
+        four: 'Podaj adres oraz termin odbioru rzeczy.'
+      subtitle:
+        one: 'Zaznacz co chcesz oddać'
+        two: 'Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy'
+        three: 'Wybierz organizacje, której chcesz pomóc'
+        four: 'Podaj adres oraz termin odbioru rzecz przez kuriera'
+      step-four:
+        address:
+          title: 'Adres odbioru'
+          street: 'Ulica'
+          city: 'Miasto'
+          zipcode: 'Kod pocztowy'
+          phone: 'Numer telefonu'
+        pickup:
+          title: 'Termin odbioru'
+          date: 'Data'
+          time: 'Godzina'
+          comment: 'Uwagi dla kuriera'
+    button:
+      next: 'Dalej'
+      previous: 'Wstecz'
+      confirm: 'Potwierdzam'
+    step-five:
+      title: 'Podsumowanie Twojej darowizny'
+      summary:
+        title: 'Oddajesz'
+        bags: 'worki'
+        subtitle: 'Dla fundacji'
+      address: 'Adres odbioru'
+      pickup: 'Termin odbioru'
