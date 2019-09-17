@@ -4,26 +4,26 @@
     {% endblock %}
 
     {% block body %}
-        <h1>Donation</h1>
+        <h1>{% trans %}donation.show.title{% endtrans %}</h1>
 
         <table class="table-striped table-bordered">
             <tbody>
             <tr>
-                <th scope="row">Id</th>
+                <th scope="row">{% trans %}donation.show.id{% endtrans %}</th>
                 <td>{{ donation.id }}</td>
             </tr>
             <tr>
-                <th scope="row">Status</th>
+                <th scope="row">{% trans %}donation.show.state{% endtrans %}</th>
                 <td>
                     {{ render(controller('AppBundle:Donation:changeState', {'id': donation.id} )) }}
                 </td>
             </tr>
             <tr>
-                <th scope="row">Institution</th>
+                <th scope="row">{% trans %}donation.show.institution{% endtrans %}</th>
                 <td>{{ donation.institution.name }}</td>
             </tr>
             <tr>
-                <th scope="row">Created</th>
+                <th scope="row">{% trans %}donation.show.created{% endtrans %}</th>
                 <td>
                     {% if donation.createdDate %}
                         {{ donation.createdDate|date('Y-m-d') }}
@@ -35,7 +35,7 @@
             </tr>
 
             <tr>
-                <th scope="row">Gifts</th>
+                <th scope="row">{% trans %}donation.show.gifts{% endtrans %}</th>
                 <td>
                     {% for gift in donation.categories %}
                         {{ gift.name }}
@@ -43,19 +43,19 @@
                 </td>
             </tr>
             <tr>
-                <th scope="row">Quantity</th>
+                <th scope="row">{% trans %}donation.show.quantity{% endtrans %}</th>
                 <td>{{ donation.quantity }}</td>
             </tr>
             <tr>
-                <th scope="row">Pickupdate</th>
+                <th scope="row">{% trans %}donation.show.date{% endtrans %}</th>
                 <td>{% if donation.pickUpDate %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
             </tr>
             <tr>
-                <th scope="row">Pickuptime</th>
+                <th scope="row">{% trans %}donation.show.time{% endtrans %}</th>
                 <td>{% if donation.pickUpTime %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
-                <th scope="row">Pickupcomment</th>
+                <th scope="row">{% trans %}donation.show.comment{% endtrans %}</th>
                 <td>{{ donation.pickUpComment }}</td>
             </tr>
             </tbody>
@@ -63,7 +63,7 @@
 
         <ul>
             <li>
-                <a href="{{ path('donation_index') }}">Back to the list</a>
+                <a href="{{ path('donation_index') }}">{% trans %}donation.show.button.back{% endtrans %}</a>
             </li>
         </ul>
     {% endblock %}

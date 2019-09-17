@@ -70,3 +70,16 @@ donation:
     action: 'Akcja'
     link:
       show: 'Szczegóły'
+  show:
+    title: 'Szczegóły daru'
+    id: 'Lp'
+    state: 'Status'
+    institution: 'Instytucja'
+    created: 'Utworzony'
+    gifts: 'Kategorie darów'
+    quantity: 'Ilość'
+    date: 'Data odbioru'
+    time: 'Godzina odbioru'
+    comment: 'Uwagi dla kuriera'
+    button:
+      back: 'Powrót do listy moich darów'
