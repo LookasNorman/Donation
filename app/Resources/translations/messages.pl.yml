@@ -96,3 +96,10 @@ email:
     date: 'Data odbioru'
     time: 'Godzina odbioru'
     comment: 'Uwagi dla kuriera'
+giftstate:
+  edit:
+    title: 'Edycja statusu daru'
+    button:
+      edit: 'Zatwierdź zmianę'
+      back: 'Powrót do listy kategorii darów'
+      delete: 'Usuń kategorię darów'
