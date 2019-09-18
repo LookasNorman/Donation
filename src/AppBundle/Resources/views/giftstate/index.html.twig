@@ -1,15 +1,15 @@
 {% extends '@App/admin/base.html.twig' %}
 
 {% block adminPage %}
-    <h1>Giftstates list</h1>
+    <h1>{% trans %}giftstate.index.title{% endtrans %}</h1>
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>State</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>{% trans %}giftstate.index.id{% endtrans %}</th>
+            <th>{% trans %}giftstate.index.state{% endtrans %}</th>
+            <th>{% trans %}giftstate.index.action{% endtrans %}</th>
+        </tr>
         </thead>
         <tbody>
         {% for giftState in giftStates %}
@@ -19,10 +19,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('giftstate_show', { 'id': giftState.id }) }}">show</a>
+                            <a href="{{ path('giftstate_show', { 'id': giftState.id }) }}">{% trans %}giftstate.index.show{% endtrans %}</a>
                         </li>
                         <li>
-                            <a href="{{ path('giftstate_edit', { 'id': giftState.id }) }}">edit</a>
+                            <a href="{{ path('giftstate_edit', { 'id': giftState.id }) }}">{% trans %}giftstate.index.edit{% endtrans %}</a>
                         </li>
                     </ul>
                 </td>
@@ -33,7 +33,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('giftstate_new') }}">Create a new giftState</a>
+            <a href="{{ path('giftstate_new') }}">{% trans %}giftstate.index.button.new{% endtrans %}</a>
         </li>
     </ul>
 {% endblock %}

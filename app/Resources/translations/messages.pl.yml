@@ -101,5 +101,14 @@ giftstate:
     title: 'Edycja statusu daru'
     button:
       edit: 'Zatwierdź zmianę'
-      back: 'Powrót do listy kategorii darów'
-      delete: 'Usuń kategorię darów'
+      back: 'Powrót do listy statusów darów'
+      delete: 'Usuń status daru'
+  index:
+    title: 'Wykaz statusów darów'
+    id: 'Lp'
+    state: 'Status'
+    action: 'Akcja'
+    show: 'Szczegóły'
+    edit: 'Edytuj'
+    button:
+      new: 'Utwórz nowy status daru'
