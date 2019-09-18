@@ -129,3 +129,11 @@ home:
   donate:
     title: 'Wspartych organizacji'
     subtitle: 'Wsparte organizacje'
+  contact-form:
+    title: 'Skontaktuj się z nami'
+    subtitle: 'Formularz kontaktowy'
+    firstname: 'Imię'
+    surname: 'Nazwisko'
+    message: 'Wiadomość'
+    button:
+      send: 'Wyślij'
