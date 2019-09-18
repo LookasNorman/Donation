@@ -112,3 +112,8 @@ giftstate:
     edit: 'Edytuj'
     button:
       new: 'Utwórz nowy status daru'
+  new:
+    title: 'Tworzenie nowego statusu darów'
+    create: 'Utwórz'
+    button:
+      back: 'Wróć do listy statusów darów'

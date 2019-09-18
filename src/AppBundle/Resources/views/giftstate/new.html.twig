@@ -1,16 +1,16 @@
 {% extends '@App/admin/base.html.twig' %}
 
 {% block adminPage %}
-    <h1>Giftstate creation</h1>
+    <h1>{% trans %}giftstate.new.title{% endtrans %}</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+    {{ form_widget(form) }}
+    <button type="submit" class="btn-primary">{% trans %}giftstate.new.create{% endtrans %}</button>
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('giftstate_index') }}">Back to the list</a>
+            <a href="{{ path('giftstate_index') }}">{% trans %}giftstate.new.button.back{% endtrans %}</a>
         </li>
     </ul>
 {% endblock %}
