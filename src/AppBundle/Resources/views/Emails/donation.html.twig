@@ -1,23 +1,23 @@
-<h1>Donation</h1>
-<h3 class="bg-info">Twoja darowizna</h3>
+<h1>{% trans %}email.donation.title{% endtrans %}</h1>
+<h3 class="bg-info">{% trans %}email.donation.subtitle{% endtrans %}</h3>
 <table class="table">
     <tbody>
     <tr>
-        <th>Id</th>
+        <th>{% trans %}email.donation.id{% endtrans %}</th>
         <td>{{ donation.id }}</td>
     </tr>
     <tr>
-        <th>Status</th>
+        <th>{% trans %}email.donation.state{% endtrans %}</th>
         <td>
             {{ donation.state.state }}
         </td>
     </tr>
     <tr>
-        <th>Institution</th>
+        <th>{% trans %}email.donation.institution{% endtrans %}</th>
         <td>{{ donation.institution.name }}</td>
     </tr>
     <tr>
-        <th>Created</th>
+        <th>{% trans %}email.donation.created{% endtrans %}</th>
         <td>
             {% if donation.createdDate %}
                 {{ donation.createdDate|date('Y-m-d') }}
@@ -28,7 +28,7 @@
         </td>
     </tr>
     <tr>
-        <th>Gifts</th>
+        <th>{% trans %}email.donation.gifts{% endtrans %}</th>
         <td>
             {% for gift in donation.categories %}
                 {{ gift.name }}
@@ -36,19 +36,19 @@
         </td>
     </tr>
     <tr>
-        <th>Quantity</th>
+        <th>{% trans %}email.donation.quantity{% endtrans %}</th>
         <td>{{ donation.quantity }}</td>
     </tr>
     <tr>
-        <th>Pickupdate</th>
+        <th>{% trans %}email.donation.date{% endtrans %}</th>
         <td>{% if donation.pickUpDate %}{{ donation.pickUpDate|date('Y-m-d') }}{% endif %}</td>
     </tr>
     <tr>
-        <th>Pickuptime</th>
+        <th>{% trans %}email.donation.time{% endtrans %}</th>
         <td>{% if donation.pickUpTime %}{{ donation.pickUpTime|date('H:i:s') }}{% endif %}</td>
     </tr>
     <tr>
-        <th>Pickupcomment</th>
+        <th>{% trans %}email.donation.comment{% endtrans %}</th>
         <td>{{ donation.pickUpComment }}</td>
     </tr>
     </tbody>

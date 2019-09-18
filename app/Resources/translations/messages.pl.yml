@@ -83,3 +83,16 @@ donation:
     comment: 'Uwagi dla kuriera'
     button:
       back: 'Powrót do listy moich darów'
+email:
+  donation:
+    title: 'Twój dar'
+    subtitle: 'Twoja darowizna'
+    id: 'Lp'
+    state: 'Status'
+    institution: 'Instytucja'
+    created: 'Utworzony'
+    gifts: 'Kategorie darów'
+    quantity: 'Ilość worków'
+    date: 'Data odbioru'
+    time: 'Godzina odbioru'
+    comment: 'Uwagi dla kuriera'
