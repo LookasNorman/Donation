@@ -137,3 +137,32 @@ home:
     message: 'Wiadomość'
     button:
       send: 'Wyślij'
+  index:
+    title:
+      firstline: 'Zacznij pomagać'
+      secondline: 'Oddaj niechciane rzeczy w zaufane ręce'
+    steps:
+      title: 'Wystarczą 4 proste kroki'
+    step:
+      one:
+        title: 'Wybierz rzeczy'
+        text: 'ubrania, zabawki, sprzęt i inne'
+      two:
+        title: 'Spakuj je'
+        text: 'skorzystaj z worków na śmieci'
+      three:
+        title: 'Zdecyduj komu chcesz pomóc'
+        text: 'wybierz zaufane miejsce'
+      four:
+        title: 'Zamów kuriera'
+        text: 'kurier przyjedzie w dogodnym terminie'
+    user:
+      register: 'Załóż konto'
+    about:
+      title: 'O nas'
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt
+        libero optio esse quisquam illo omnis.'
+    help:
+      title: 'Komu pomagamy'
+      text: 'W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
+        Możesz sprawdzić czym się zajmują.'

@@ -1,92 +1,86 @@
 {% extends '@App/base.html.twig' %}
 
-{% block header %}
-<header class="header--main-page">
-{% endblock %}
+    {% block header %}
+        <header class="header--main-page">
+    {% endblock %}
 
-{% block body %}
+    {% block body %}
 
-    <div class="slogan container container--90">
-        <div class="slogan--item">
-            <h1>
-                Zacznij pomagać!<br/>
-                Oddaj niechciane rzeczy w zaufane ręce
-            </h1>
-        </div>
-    </div>
-
-    <section id="stats" class="stats">
-        <div class="container container--85">
-            {{ render(controller('AppBundle:Home:quantityBags')) }}
-            {{ render(controller('AppBundle:Home:donateInstitutions')) }}
-        </div>
-    </section>
-
-    <section id="steps" class="steps">
-        <h2>Wystarczą 4 proste kroki</h2>
-
-        <div class="steps--container">
-            <div class="steps--item">
-                <span class="icon icon--hands"></span>
-                <h3>Wybierz rzeczy</h3>
-                <p>ubrania, zabawki, sprzęt i inne</p>
-            </div>
-            <div class="steps--item">
-                <span class="icon icon--arrow"></span>
-                <h3>Spakuj je</h3>
-                <p>skorzystaj z worków na śmieci</p>
-            </div>
-            <div class="steps--item">
-                <span class="icon icon--glasses"></span>
-                <h3>Zdecyduj komu chcesz pomóc</h3>
-                <p>wybierz zaufane miejsce</p>
-            </div>
-            <div class="steps--item">
-                <span class="icon icon--courier"></span>
-                <h3>Zamów kuriera</h3>
-                <p>kurier przyjedzie w dogodnym terminie</p>
+        <div class="slogan container container--90">
+            <div class="slogan--item">
+                <h1>
+                    {% trans %}home.index.title.firstline{% endtrans %}!<br/>
+                    {% trans %}home.index.title.secondline{% endtrans %}
+                </h1>
             </div>
         </div>
 
-        <a href="{{path('fos_user_registration_register')}}" class="btn btn--large">Załóż konto</a>
-    </section>
+        <section id="stats" class="stats">
+            <div class="container container--85">
+                {{ render(controller('AppBundle:Home:quantityBags')) }}
+                {{ render(controller('AppBundle:Home:donateInstitutions')) }}
+            </div>
+        </section>
 
-    <section id="about-us" class="about-us">
-        <div class="about-us--text">
-            <h2>O nas</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt
-                libero optio esse quisquam illo omnis.</p>
-            <img src="{{ asset('assets/images/signature.svg') }}" class="about-us--text-signature" alt="Signature"/>
-        </div>
-        <div class="about-us--image"><img src="{{ asset('assets/images/about-us.jpg') }}" alt="People in circle"/></div>
-    </section>
+        <section id="steps" class="steps">
+            <h2>{% trans %}home.index.steps.title{% endtrans %}</h2>
 
-    <section id="help" class="help">
-        <h2>Komu pomagamy?</h2>
+            <div class="steps--container">
+                <div class="steps--item">
+                    <span class="icon icon--hands"></span>
+                    <h3>{% trans %}home.index.step.one.title{% endtrans %}</h3>
+                    <p>{% trans %}home.index.step.one.text{% endtrans %}</p>
+                </div>
+                <div class="steps--item">
+                    <span class="icon icon--arrow"></span>
+                    <h3>{% trans %}home.index.step.two.title{% endtrans %}</h3>
+                    <p>{% trans %}home.index.step.two.text{% endtrans %}</p>
+                </div>
+                <div class="steps--item">
+                    <span class="icon icon--glasses"></span>
+                    <h3>{% trans %}home.index.step.three.title{% endtrans %}</h3>
+                    <p>{% trans %}home.index.step.three.text{% endtrans %}</p>
+                </div>
+                <div class="steps--item">
+                    <span class="icon icon--courier"></span>
+                    <h3>{% trans %}home.index.step.four.title{% endtrans %}</h3>
+                    <p>{% trans %}home.index.step.four.text{% endtrans %}</p>
+                </div>
+            </div>
 
-        <!-- SLIDE 1 -->
-        <div class="help--slides active" data-id="1">
-            <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
-                Możesz sprawdzić czym się zajmują.</p>
+            <a href="{{ path('fos_user_registration_register') }}"
+               class="btn btn--large">{% trans %}home.index.user.register{% endtrans %}</a>
+        </section>
 
-            <ul class="help--slides-items">
-                {% for institution in institutions %}
-                    {% if loop.index0 % 2 == 0 %}
-                        <li>
-                    {% endif %}
-                    <div class="col">
-                        <div class="title">{{ institution.name }}</div>
-                        <div class="subtitle">{{ institution.description }}</div>
-                    </div>
-                    {% if loop.index0 % 2 == 1 or loop.last %}
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+        <section id="about-us" class="about-us">
+            <div class="about-us--text">
+                <h2>{% trans %}home.index.about.title{% endtrans %}</h2>
+                <p>{% trans %}home.index.about.text{% endtrans %}</p>
+                <img src="{{ asset('assets/images/signature.svg') }}" class="about-us--text-signature" alt="Signature"/>
+            </div>
+            <div class="about-us--image"><img src="{{ asset('assets/images/about-us.jpg') }}" alt="People in circle"/>
+            </div>
+        </section>
 
-        </div>
+        <section id="help" class="help">
+            <h2>{% trans %}home.index.help.title{% endtrans %}?</h2>
 
-    </section>
-
-
-{% endblock %}
+            <div class="help--slides active" data-id="1">
+                <p>{% trans %}home.index.help.text{% endtrans %}</p>
+                <ul class="help--slides-items">
+                    {% for institution in institutions %}
+                        {% if loop.index0 % 2 == 0 %}
+                            <li>
+                        {% endif %}
+                        <div class="col">
+                            <div class="title">{{ institution.name }}</div>
+                            <div class="subtitle">{{ institution.description }}</div>
+                        </div>
+                        {% if loop.index0 % 2 == 1 or loop.last %}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    {% endblock %}
