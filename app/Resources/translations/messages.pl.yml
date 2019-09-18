@@ -170,3 +170,10 @@ home:
     title: 'Oddanych worków'
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum
       tempora!'
+institution:
+  edit:
+    title: 'Edycja instytucji'
+    button:
+      edit: 'Edytuj'
+      back: 'Powrót do listy instytucji'
+      delete: 'Usuń instytucję'

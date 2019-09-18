@@ -1,6 +1,6 @@
 {% extends '@App/admin/base.html.twig' %}
 {% block adminPage %}
-    <h1>Institution edit</h1>
+    <h1>{% trans %}institution.edit.title{% endtrans %}</h1>
 
     {{ form_start(edit_form) }}
     <div class="container">
@@ -20,17 +20,17 @@
                 {{ form_widget(edit_form.description) }}
             </div>
         </div>
-        <button type="submit" class="btn-primary">Edytuj</button>
+        <button type="submit" class="btn-primary">{% trans %}institution.edit.button.edit{% endtrans %}</button>
     </div>
     {{ form_end(edit_form) }}
 
     <ul>
         <li>
-            <a href="{{ path('institution_index') }}">Back to the list</a>
+            <a href="{{ path('institution_index') }}">{% trans %}institution.edit.button.back{% endtrans %}</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete" class="btn-danger">
+            <input type="submit" value="{% trans %}institution.edit.button.delete{% endtrans %}" class="btn-danger">
             {{ form_end(delete_form) }}
         </li>
     </ul>
