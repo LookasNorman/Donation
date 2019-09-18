@@ -117,3 +117,11 @@ giftstate:
     create: 'Utwórz'
     button:
       back: 'Wróć do listy statusów darów'
+  show:
+    title: 'Szczeguły statusu daru'
+    id: 'Lp'
+    state: 'Nazwa statusu'
+    button:
+      back: 'Wróć do listy statusów darów'
+      edit: 'Edytuj status'
+      delete: 'Usuń status'

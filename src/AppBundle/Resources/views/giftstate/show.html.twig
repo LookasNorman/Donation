@@ -1,32 +1,32 @@
 {% extends '@App/admin/base.html.twig' %}
 
 {% block adminPage %}
-    <h1>Giftstate</h1>
+    <h1>{% trans %}giftstate.show.title{% endtrans %}</h1>
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ giftState.id }}</td>
-            </tr>
-            <tr>
-                <th>State</th>
-                <td>{{ giftState.state }}</td>
-            </tr>
+        <tr>
+            <th>{% trans %}giftstate.show.id{% endtrans %}</th>
+            <td>{{ giftState.id }}</td>
+        </tr>
+        <tr>
+            <th>{% trans %}giftstate.show.state{% endtrans %}</th>
+            <td>{{ giftState.state }}</td>
+        </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('giftstate_index') }}">Back to the list</a>
+            <a href="{{ path('giftstate_index') }}">{% trans %}giftstate.show.button.back{% endtrans %}</a>
         </li>
         <li>
-            <a href="{{ path('giftstate_edit', { 'id': giftState.id }) }}">Edit</a>
+            <a href="{{ path('giftstate_edit', { 'id': giftState.id }) }}">{% trans %}giftstate.show.button.edit{% endtrans %}</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
+            <button type="submit" class="btn-danger">{% trans %}giftstate.show.button.delete{% endtrans %}
+                {{ form_end(delete_form) }}
         </li>
     </ul>
 {% endblock %}
