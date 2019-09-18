@@ -177,3 +177,14 @@ institution:
       edit: 'Edytuj'
       back: 'Powrót do listy instytucji'
       delete: 'Usuń instytucję'
+  index:
+    title: 'Wykaz organizacji'
+    id: 'Lp'
+    name: 'Nazwa organizacji'
+    desc: 'Opis'
+    action: 'Akcje'
+    button:
+      show: 'Szczegóły'
+      edit: 'Edytuj'
+    link:
+      create: 'Dodaj nową organizację'
