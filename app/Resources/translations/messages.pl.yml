@@ -125,3 +125,7 @@ giftstate:
       back: 'Wróć do listy statusów darów'
       edit: 'Edytuj status'
       delete: 'Usuń status'
+home:
+  donate:
+    title: 'Wspartych organizacji'
+    subtitle: 'Wsparte organizacje'
