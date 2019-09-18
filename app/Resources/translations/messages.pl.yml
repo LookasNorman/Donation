@@ -166,3 +166,7 @@ home:
       title: 'Komu pomagamy'
       text: 'W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
         Możesz sprawdzić czym się zajmują.'
+  bags:
+    title: 'Oddanych worków'
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum
+      tempora!'
