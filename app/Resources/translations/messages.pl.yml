@@ -229,3 +229,8 @@ user:
       edit: 'Edytuj użytkownika'
   not-exist:
     title: 'Podany użytkownik nie istnieje.'
+  new:
+    title: 'Tworzenie nowego użytkownika'
+    button:
+      create: 'Utwórz'
+      back: 'Wróć do listy użytkowników'
