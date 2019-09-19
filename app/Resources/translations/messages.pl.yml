@@ -257,3 +257,13 @@ admin:
       edit: 'Edytuj'
     link:
       back: 'Wróć do listy administratorów'
+  index:
+    title: 'Lista administratorów'
+    id: 'Lp'
+    username: 'Nazwa administratora'
+    email: 'Adres email'
+    action: 'Akcje'
+    link:
+      show: 'Szczegóły'
+      edit: 'Edytuj'
+      demote: 'Zabierz uprawnienia'

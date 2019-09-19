@@ -1,16 +1,15 @@
 {% extends '@App/admin/base.html.twig' %}
 
     {% block adminPage %}
-        <h1>Admin list</h1>
+        <h1>{% trans %}admin.index.title{% endtrans %}</h1>
 
         <table class="table">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Active</th>
-                <th>Actions</th>
+                <th>{% trans %}admin.index.id{% endtrans %}</th>
+                <th>{% trans %}admin.index.username{% endtrans %}</th>
+                <th>{% trans %}admin.index.email{% endtrans %}</th>
+                <th>{% trans %}admin.index.action{% endtrans %}</th>
             </tr>
             </thead>
             <tbody>
@@ -19,24 +18,16 @@
                     <td><a href="{{ path('admin_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                     <td>{{ user.username }}</td>
                     <td>{{ user.email }}</td>
-                    <td>{{ user.enabled }}</td>
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('admin_show', { 'id': user.id }) }}">show</a>
+                                <a href="{{ path('admin_show', { 'id': user.id }) }}">{% trans %}admin.index.link.show{% endtrans %}</a>
                             </li>
                             <li>
-                                <a href="{{ path('admin_edit', { 'id': user.id }) }}">edit</a>
+                                <a href="{{ path('admin_edit', { 'id': user.id }) }}">{% trans %}admin.index.link.edit{% endtrans %}</a>
                             </li>
                             <li>
-                                <a href="{{ path('user_demote', { 'id': user.id }) }}">demote</a>
-                            </li>
-                            <li>
-                                {% if user.enabled %}
-                                    <a href="{{ path('user_deactive', { 'id': user.id }) }}">block user</a>
-                                {% else %}
-                                    <a href="{{ path('user_active', { 'id': user.id }) }}">unblock user</a>
-                                {% endif %}
+                                <a href="{{ path('user_demote', { 'id': user.id }) }}">{% trans %}admin.index.link.demote{% endtrans %}</a>
                             </li>
                         </ul>
                     </td>
