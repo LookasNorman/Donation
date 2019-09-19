@@ -1,14 +1,16 @@
 <ul class="nav--actions">
     {% if not is_granted('ROLE_USER') %}
-        <li><a href="{{ path('fos_user_security_login') }}">Zaloguj</a></li>
-        <li class="highlighted"><a href="{{ path('fos_user_registration_register') }}">Załóż konto</a></li>
+        <li><a href="{{ path('fos_user_security_login') }}">{% trans %}menu.user.login{% endtrans %}</a></li>
+        <li class="highlighted"><a
+                    href="{{ path('fos_user_registration_register') }}">{% trans %}menu.user.register{% endtrans %}</a>
+        </li>
     {% else %}
         <li class="logged-user">
             {{ render(controller('AppBundle:User:loggedUserMenu')) }}
         </li>
         {% if is_granted('ROLE_ADMIN') %}
             <li class="btn--highlighted">
-                <a href="{{ path('admin_page') }}">Panel administratora</a>
+                <a href="{{ path('admin_page') }}">{% trans %}menu.user.admin{% endtrans %}</a>
             </li>
         {% endif %}
     {% endif %}

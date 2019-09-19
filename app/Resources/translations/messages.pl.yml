@@ -216,3 +216,7 @@ menu:
     institution: 'Fundacje i organizacje'
     gift: 'Przekaż dary'
     contact: 'Kontakt'
+  user:
+    login: 'Zaloguj'
+    register: 'Załóż konto'
+    admin: 'Panel administratora'
