@@ -277,3 +277,34 @@ admin:
       edit: 'Edytuj administratora'
   base:
     title: 'Panel administratora'
+  sidebar:
+    portal: 'Strona portalu'
+    management: 'Zarządzanie'
+    admin:
+      title: 'Administratorzy'
+      info: 'Zarządzaj'
+      show: 'Wyświetl'
+      new: 'Utwórz nowego'
+    user:
+      title: 'Użytkownicy'
+      info: 'Zarządzaj'
+      show: 'Wyświetl'
+    institution:
+      title: 'Organizacje'
+      info: 'Zarządzaj'
+      show: 'Wyświetl'
+      new: 'Utwórz nową'
+    giftstate:
+      title: 'Statusy darów'
+      info: 'Zarządzaj'
+      show: 'Wyświetl'
+      new: 'Utwórz'
+    addons:
+      title: 'Dodatki'
+      page:
+        title: 'Strony'
+        user:
+          title: 'Użytkownicy'
+          login: 'Zaloguj'
+          register: 'Zarejestruj'
+          forgot: 'Przypomnij hasło'

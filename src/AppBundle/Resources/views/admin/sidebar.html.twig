@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ path('admin_page') }}">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -16,7 +16,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{path('homepage')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>{% trans %}admin.sidebar.portal{% endtrans %}</span></a>
     </li>
 
     <!-- Divider -->
@@ -24,20 +24,20 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Zarządzanie
+        {% trans %}admin.sidebar.management{% endtrans %}
     </div>
 
     <!-- Nav Item - Pages Administrator Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Administratorzy</span>
+            <span>{% trans %}admin.sidebar.admin.title{% endtrans %}</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Zarządzaj:</h6>
-                <a class="collapse-item" href="{{path('admin_index')}}">Wyświetl</a>
-                <a class="collapse-item" href="{{path('user_index')}}">Dodaj nowego</a>
+                <h6 class="collapse-header">{% trans %}admin.sidebar.admin.info{% endtrans %}:</h6>
+                <a class="collapse-item" href="{{path('admin_index')}}">{% trans %}admin.sidebar.admin.show{% endtrans %}</a>
+                <a class="collapse-item" href="{{path('user_index')}}">{% trans %}admin.sidebar.admin.new{% endtrans %}</a>
             </div>
         </div>
     </li>
@@ -46,12 +46,12 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
-            <span>Użytkownicy</span>
+            <span>{% trans %}admin.sidebar.user.title{% endtrans %}</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Zarządzaj:</h6>
-                <a class="collapse-item" href="{{path('user_index')}}">Wyświetl</a>
+                <h6 class="collapse-header">{% trans %}admin.sidebar.user.info{% endtrans %}:</h6>
+                <a class="collapse-item" href="{{path('user_index')}}">{% trans %}admin.sidebar.user.show{% endtrans %}</a>
             </div>
         </div>
     </li>
@@ -60,13 +60,13 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInstitution" aria-expanded="true" aria-controls="collapseInstitution">
             <i class="fas fa-fw fa-wrench"></i>
-            <span>Instytucje</span>
+            <span>{% trans %}admin.sidebar.institution.title{% endtrans %}</span>
         </a>
         <div id="collapseInstitution" class="collapse" aria-labelledby="headingInstitution" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Zarządzaj:</h6>
-                <a class="collapse-item" href="{{path('institution_index')}}">Wyświetl</a>
-                <a class="collapse-item" href="{{path('institution_new')}}">Utwórz</a>
+                <h6 class="collapse-header">{% trans %}admin.sidebar.institution.info{% endtrans %}:</h6>
+                <a class="collapse-item" href="{{path('institution_index')}}">{% trans %}admin.sidebar.institution.show{% endtrans %}</a>
+                <a class="collapse-item" href="{{path('institution_new')}}">{% trans %}admin.sidebar.institution.new{% endtrans %}</a>
             </div>
         </div>
     </li>
@@ -75,13 +75,13 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGiftState" aria-expanded="true" aria-controls="collapseGiftState">
             <i class="fas fa-fw fa-wrench"></i>
-            <span>Statusy darów</span>
+            <span>{% trans %}admin.sidebar.giftstate.title{% endtrans %}</span>
         </a>
         <div id="collapseGiftState" class="collapse" aria-labelledby="headingGiftState" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Zarządzaj:</h6>
-                <a class="collapse-item" href="{{path('giftstate_index')}}">Wyświetl</a>
-                <a class="collapse-item" href="{{path('giftstate_new')}}">Utwórz</a>
+                <h6 class="collapse-header">{% trans %}admin.sidebar.giftstate.info{% endtrans %}:</h6>
+                <a class="collapse-item" href="{{path('giftstate_index')}}">{% trans %}admin.sidebar.giftstate.show{% endtrans %}</a>
+                <a class="collapse-item" href="{{path('giftstate_new')}}">{% trans %}admin.sidebar.giftstate.new{% endtrans %}</a>
             </div>
         </div>
     </li>
@@ -91,42 +91,24 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Addons
+        {% trans %}admin.sidebar.addons.title{% endtrans %}
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
+            <span>{% trans %}admin.sidebar.addons.page.title{% endtrans %}</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="{{path('fos_user_security_login')}}">Login</a>
-                <a class="collapse-item" href="{{path('fos_user_registration_register')}}">Register</a>
-                <a class="collapse-item" href="{{path('fos_user_resetting_request')}}">Forgot Password</a>
-                {#                    <div class="collapse-divider"></div>#}
-                {#                    <h6 class="collapse-header">Other Pages:</h6>#}
-                {#                    <a class="collapse-item" href="404.html">404 Page</a>#}
-                {#                    <a class="collapse-item active" href="blank.html">Blank Page</a>#}
+                <h6 class="collapse-header">{% trans %}admin.sidebar.addons.page.user.title{% endtrans %}:</h6>
+                <a class="collapse-item" href="{{path('fos_user_security_login')}}">{% trans %}admin.sidebar.addons.page.user.login{% endtrans %}</a>
+                <a class="collapse-item" href="{{path('fos_user_registration_register')}}">{% trans %}admin.sidebar.addons.page.user.register{% endtrans %}</a>
+                <a class="collapse-item" href="{{path('fos_user_resetting_request')}}">{% trans %}admin.sidebar.addons.page.user.forgot{% endtrans %}</a>
             </div>
         </div>
     </li>
-
-    <!-- Nav Item - Charts -->
-    {#        <li class="nav-item">#}
-    {#            <a class="nav-link" href="charts.html">#}
-    {#                <i class="fas fa-fw fa-chart-area"></i>#}
-    {#                <span>Charts</span></a>#}
-    {#        </li>#}
-
-    <!-- Nav Item - Tables -->
-    {#        <li class="nav-item">#}
-    {#            <a class="nav-link" href="tables.html">#}
-    {#                <i class="fas fa-fw fa-table"></i>#}
-    {#                <span>Tables</span></a>#}
-    {#        </li>#}
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
