@@ -1,6 +1,6 @@
 {% extends '@App/admin/base.html.twig' %}
     {% block adminPage %}
-        <h1>Institution creation</h1>
+        <h1>{% trans %}institution.index.title{% endtrans %}</h1>
         {{ form_start(form) }}
 
         <div class="container">
@@ -20,12 +20,12 @@
                     {{ form_widget(form.description) }}
                 </div>
             </div>
-            <button type="submit" class="btn-primary">Utwórz</button>
+            <button type="submit" class="btn-primary">{% trans %}institution.new.button.create{% endtrans %}</button>
         </div>
         {{ form_end(form) }}
         <ul>
             <li>
-                <a href="{{ path('institution_index') }}">Back to the list</a>
+                <a href="{{ path('institution_index') }}">{% trans %}institution.new.button.back{% endtrans %}</a>
             </li>
         </ul>
     {% endblock %}

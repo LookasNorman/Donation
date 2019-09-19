@@ -188,3 +188,8 @@ institution:
       edit: 'Edytuj'
     link:
       create: 'Dodaj nową organizację'
+  new:
+    title: 'Dodawanie nowej organizacji'
+    button:
+      create: 'Utwórz'
+      back: 'Powrót do listy organizacji'
