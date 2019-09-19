@@ -106,6 +106,7 @@ class DonationController extends Controller
         $user = $this->container->get('security.token_storage')->getToken()->getUser();
         $donationOwner = $donation->getUser();
         if($user != $donationOwner){
+            $this->addFlash('notice', 'Próbowałeś wyświetlić nie swój dar');
             return $this->redirectToRoute('donation_index');
         }
         return $this->render('@App/donation/show.html.twig', array(

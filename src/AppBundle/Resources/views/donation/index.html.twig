@@ -4,6 +4,12 @@
     {% endblock %}
 
     {% block body %}
+        {% for message in app.flashes('notice') %}
+            <div class="flash-notice">
+                <p>{{ message }}</p>
+            </div>
+        {% endfor %}
+
         <h1>{% trans %}donation.index.title{% endtrans %}</h1>
 
         <table class="table-striped table-bordered">
