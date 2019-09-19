@@ -227,3 +227,5 @@ user:
       back: 'Powrót do listy użytkowników'
       delete: 'Usuń użytkownika'
       edit: 'Edytuj użytkownika'
+  not-exist:
+    title: 'Podany użytkownik nie istnieje.'
