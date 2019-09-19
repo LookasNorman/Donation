@@ -193,3 +193,12 @@ institution:
     button:
       create: 'Utwórz'
       back: 'Powrót do listy organizacji'
+  show:
+    title: 'Szczegóły organizacji'
+    id: 'Lp'
+    name: 'Nazwa organizacji'
+    desc: 'Opis organizacji'
+    button:
+      back: 'Powrót do listy organizacji'
+      edit: 'Edycja organizacji'
+      delete: 'Usuń organizację'
