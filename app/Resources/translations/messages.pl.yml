@@ -209,3 +209,10 @@ menu:
     password: 'Zmień hasło'
     donation: 'Moje zbiórki'
     logout: 'Wyloguj'
+  main:
+    start: 'Start'
+    what: 'O co chodzi?'
+    about: 'O nas'
+    institution: 'Fundacje i organizacje'
+    gift: 'Przekaż dary'
+    contact: 'Kontakt'

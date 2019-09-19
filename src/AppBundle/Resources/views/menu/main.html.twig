@@ -1,8 +1,14 @@
 <ul>
-    <li><a href="{{ path('homepage') }}" class="btn btn--without-border active">Start</a></li>
-    <li><a href="{{ path('homepage') }}#steps" class="btn btn--without-border">O co chodzi?</a></li>
-    <li><a href="{{ path('homepage') }}#about-us" class="btn btn--without-border">O nas</a></li>
-    <li><a href="{{ path('homepage') }}#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
-    <li><a href="{{ path('add_donation') }}" class="btn btn--without-border">Przekaż dary</a></li>
-    <li><a href="{{ path('homepage') }}#contact" class="btn btn--without-border">Kontakt</a></li>
+    <li><a href="{{ path('homepage') }}"
+           class="btn btn--without-border active">{% trans %}menu.main.start{% endtrans %}</a></li>
+    <li><a href="{{ path('homepage') }}#steps"
+           class="btn btn--without-border">{% trans %}menu.main.what{% endtrans %}</a></li>
+    <li><a href="{{ path('homepage') }}#about-us"
+           class="btn btn--without-border">{% trans %}menu.main.about{% endtrans %}</a></li>
+    <li><a href="{{ path('homepage') }}#help"
+           class="btn btn--without-border">{% trans %}menu.main.institution{% endtrans %}</a></li>
+    <li><a href="{{ path('add_donation') }}" class="btn btn--without-border">{% trans %}menu.main.gift{% endtrans %}</a>
+    </li>
+    <li><a href="{{ path('homepage') }}#contact"
+           class="btn btn--without-border">{% trans %}menu.main.contact{% endtrans %}</a></li>
 </ul>
