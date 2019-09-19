@@ -267,3 +267,11 @@ admin:
       show: 'Szczegóły'
       edit: 'Edytuj'
       demote: 'Zabierz uprawnienia'
+  show:
+    title: 'Szczegóły administratora'
+    id: 'Lp'
+    username: 'Nazwa administratora'
+    email: 'Adres email'
+    link:
+      back: 'Powrót do listy administratorów'
+      edit: 'Edytuj administratora'

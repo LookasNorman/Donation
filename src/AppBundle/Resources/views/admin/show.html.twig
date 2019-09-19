@@ -1,19 +1,19 @@
 {% extends '@App/admin/base.html.twig' %}
     {% block adminPage %}
-        <h1>User</h1>
+        <h1>{% trans %}admin.show.title{% endtrans %}</h1>
 
         <table class="table">
             <tbody>
             <tr>
-                <th>Id</th>
+                <th>{% trans %}admin.show.id{% endtrans %}</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Username</th>
+                <th>{% trans %}admin.show.username{% endtrans %}</th>
                 <td>{{ user.username }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th>{% trans %}admin.show.email{% endtrans %}</th>
                 <td>{{ user.email }}</td>
             </tr>
             </tbody>
@@ -21,10 +21,10 @@
 
         <ul>
             <li>
-                <a href="{{ path('admin_index') }}">Back to the list</a>
+                <a href="{{ path('admin_index') }}">{% trans %}admin.show.link.back{% endtrans %}</a>
             </li>
             <li>
-                <a href="{{ path('admin_edit', { 'id': user.id }) }}">Edit</a>
+                <a href="{{ path('admin_edit', { 'id': user.id }) }}">{% trans %}admin.show.link.edit{% endtrans %}</a>
             </li>
         </ul>
     {% endblock %}
