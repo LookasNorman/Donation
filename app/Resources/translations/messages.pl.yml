@@ -234,3 +234,19 @@ user:
     button:
       create: 'Utwórz'
       back: 'Wróć do listy użytkowników'
+  index:
+    title: 'Wykaz użytkowników'
+    id: 'Lp'
+    username: 'Nazwa użytkownika'
+    email: 'Adres email'
+    active: 'Status'
+    action: 'Akcje'
+    state:
+      yes: 'Aktywny'
+      no: 'Nieaktywny'
+    link:
+      show: 'Szczegóły'
+      edit: 'Edycja'
+      promote: 'Podnieś uprawnienia'
+      block: 'Zablokuj'
+      unblock: 'Odblokuj / Aktywuj'
