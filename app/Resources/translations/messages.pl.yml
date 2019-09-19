@@ -1,5 +1,6 @@
 donation:
   form:
+    bags: "{1} worek | ]1,4] worki | ]4,Inf] worków"
     slogan:
       text: 'Oddaj rzeczy, których już nie chcesz'
       upper: 'potrzebującym'
