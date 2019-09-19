@@ -275,3 +275,5 @@ admin:
     link:
       back: 'Powrót do listy administratorów'
       edit: 'Edytuj administratora'
+  base:
+    title: 'Panel administratora'
