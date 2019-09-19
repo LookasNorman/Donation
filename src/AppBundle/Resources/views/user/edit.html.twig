@@ -1,6 +1,6 @@
 {% extends '@App/admin/base.html.twig' %}
     {% block adminPage %}
-        <h1>User edit</h1>
+        <h1>{% trans %}user.edit.title{% endtrans %}</h1>
 
         {{ form_start(edit_form) }}
         <div class="container">
@@ -36,17 +36,17 @@
                     {{ form_widget(edit_form.surname) }}
                 </div>
             </div>
-            <input type="submit" value="Edit" class="btn-primary"/>
+            <input type="submit" value="{% trans %}user.edit.button.edit{% endtrans %}" class="btn-primary"/>
         </div>
         {{ form_end(edit_form) }}
 
         <ul>
             <li>
-                <a href="{{ path('user_index') }}">Back to the list</a>
+                <a href="{{ path('user_index') }}">{% trans %}user.edit.button.back{% endtrans %}</a>
             </li>
             <li>
                 {{ form_start(delete_form) }}
-                <input type="submit" value="Delete" class="btn-danger">
+                <input type="submit" value="{% trans %}user.edit.button.delete{% endtrans %}" class="btn-danger">
                 {{ form_end(delete_form) }}
             </li>
         </ul>

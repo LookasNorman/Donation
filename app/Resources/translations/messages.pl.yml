@@ -220,3 +220,10 @@ menu:
     login: 'Zaloguj'
     register: 'Załóż konto'
     admin: 'Panel administratora'
+user:
+  edit:
+    title: 'Edycja użytkownika'
+    button:
+      back: 'Powrót do listy użytkowników'
+      delete: 'Usuń użytkownika'
+      edit: 'Edytuj użytkownika'
