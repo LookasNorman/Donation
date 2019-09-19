@@ -1,8 +1,8 @@
-Witaj {{ loggedUser.username }}
+{% trans %}menu.logged.welcome{% endtrans %} {{ loggedUser.username }}
 <ul class="dropdown">
-    <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
-    <li><a href="{{ path('fos_user_change_password') }}">Zmień hasło</a></li>
-    <li><a href="#">Ustawienia</a></li>
-    <li><a href="{{path('donation_index')}}">Moje zbiórki</a></li>
-    <li><a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></li>
+    <li><a href="{{ path('fos_user_profile_show') }}">{% trans %}menu.logged.profile{% endtrans %}</a></li>
+    <li><a href="{{ path('fos_user_change_password') }}">{% trans %}menu.logged.password{% endtrans %}</a></li>
+    {#    <li><a href="#">Ustawienia</a></li>#}
+    <li><a href="{{ path('donation_index') }}">{% trans %}menu.logged.donation{% endtrans %}</a></li>
+    <li><a href="{{ path('fos_user_security_logout') }}">{% trans %}menu.logged.logout{% endtrans %}</a></li>
 </ul>

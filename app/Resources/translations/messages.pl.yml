@@ -202,3 +202,10 @@ institution:
       back: 'Powrót do listy organizacji'
       edit: 'Edycja organizacji'
       delete: 'Usuń organizację'
+menu:
+  logged:
+    welcome: 'Witaj'
+    profile: 'Profil'
+    password: 'Zmień hasło'
+    donation: 'Moje zbiórki'
+    logout: 'Wyloguj'
