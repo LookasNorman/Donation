@@ -250,3 +250,10 @@ user:
       promote: 'Podnieś uprawnienia'
       block: 'Zablokuj'
       unblock: 'Odblokuj / Aktywuj'
+admin:
+  edit:
+    title: 'Edycja administatora'
+    button:
+      edit: 'Edytuj'
+    link:
+      back: 'Wróć do listy administratorów'
