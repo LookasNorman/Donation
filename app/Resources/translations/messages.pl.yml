@@ -309,3 +309,14 @@ admin:
           login: 'Zaloguj'
           register: 'Zarejestruj'
           forgot: 'Przypomnij hasło'
+form:
+  giftState:
+    state: 'Status daru'
+  institution:
+    name: 'Nazwa organizacji'
+    desc: 'Opis organizacji'
+  user:
+    username: 'Nazwa użytkownika'
+    email: 'Adres email'
+    firstname: 'Imię'
+    surname: 'Nazwisko'
