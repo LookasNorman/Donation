@@ -8,6 +8,11 @@ imports:
 parameters:
     locale: pl
 
+services:
+    my.custom.user_provider:
+        class:        MyBundle\Security\Core\User\MyFOSUBUserProvider
+        arguments: ['@fos_user.user_manager', { facebook: facebook_id }]
+
 framework:
     serializer: { enable_annotations: true }
     #esi: ~
@@ -91,6 +96,14 @@ fos_user:
 
 hwi_oauth:
     firewall_names: [secured_area]
+#    connect:
+#        account_connector: my.custom.user_provider
+#        firewall_names:
+#            - 'hwi_oauth_firewall_name' # name of security firewall configured to work with HWIOAuthBundle
+#        fosub:
+#            username_iterations: 30
+#            properties:
+#                facebook:    facebook_id
     resource_owners:
         facebook:
             type:                facebook
@@ -99,3 +112,8 @@ hwi_oauth:
             scope: email
             options:
                 csrf: true
+        google:
+            type:                google
+            client_id:           336980441820-clb1lhbq2k0piclgpu2a1avulsn3b7lj.apps.googleusercontent.com
+            client_secret:       qB8H9V57YgoYTedXRGtskOF3
+            scope:               "email profile"
