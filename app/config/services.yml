@@ -54,3 +54,9 @@ services:
             $formFactory: '@fos_user.profile.form.factory'
             $mailer: '@fos_user.mailer.twig_swift'
             $retryTtl: 7200
+
+    my.oauth_aware.user_provider.service:
+        class: HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider
+        arguments:
+            - '@fos_user.user_manager'
+            - ['facebook']

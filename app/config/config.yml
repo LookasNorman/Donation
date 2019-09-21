@@ -88,3 +88,14 @@ fos_user:
     profile:
         form:
             type: AppBundle\Form\ProfileType
+
+hwi_oauth:
+    firewall_names: [secured_area]
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           2366896556899099
+            client_secret:       f1f2219584bf66657adb9d3e0db76a0e
+            scope: email
+            options:
+                csrf: true
