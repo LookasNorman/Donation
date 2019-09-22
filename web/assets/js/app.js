@@ -211,16 +211,24 @@ document.addEventListener("DOMContentLoaded", function () {
         $('input').removeClass();
         $('textarea').removeClass();
         let name = $('#contact-name').val();
+        let surname = $('#contact-surname').val();
+        let message = $('#contact-message').val();
         if (name == '') {
             $('#contact-name').addClass('border border-danger');
-        }
-        let surname = $('#contact-surname').val();
-        if (surname == '') {
+        } else if (surname == '') {
             $('#contact-surname').addClass('border border-danger');
-        }
-        let message = $('#contact-message').val();
-        if (message == '') {
+        } else if (message == '') {
             $('#contact-message').addClass('border border-danger');
+        } else {
+            const URL = 'http://localhost:8000';
+            $.ajax({
+                url: URL + "/contact-email/" + name + ' ' + surname + "/" + message,
+                type: "POST"
+            })
+                // .done(function (result) {
+                //     let quantitySummary = quantity + " " + result;
+                //     $('#quantity-summary').text(quantitySummary);
+                // });
         }
     })
 });
