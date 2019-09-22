@@ -204,4 +204,23 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form !== null) {
         new FormSteps(form);
     }
+
+
+    $('.form--contact').children('button').on('click', function (e) {
+        e.preventDefault();
+        $('input').removeClass();
+        $('textarea').removeClass();
+        let name = $('#contact-name').val();
+        if (name == '') {
+            $('#contact-name').addClass('border border-danger');
+        }
+        let surname = $('#contact-surname').val();
+        if (surname == '') {
+            $('#contact-surname').addClass('border border-danger');
+        }
+        let message = $('#contact-message').val();
+        if (message == '') {
+            $('#contact-message').addClass('border border-danger');
+        }
+    })
 });
