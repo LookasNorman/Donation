@@ -57,6 +57,9 @@ services:
 
     my.oauth_aware.user_provider.service:
         class: HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider
-        arguments:
-            - '@fos_user.user_manager'
-            - ['facebook']
+#        arguments:
+#            - '@fos_user.user_manager'
+#            - [google: google]
+
+        arguments: [ '@fos_user.user_manager', { facebook: facebook_id, google: googleId, twitter: twitter_id } ]
+

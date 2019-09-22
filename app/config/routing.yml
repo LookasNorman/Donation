@@ -19,3 +19,6 @@ fos_user:
 
 facebook_login:
   path: /login/check-facebook
+
+google_login:
+  path: /login/check-google

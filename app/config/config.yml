@@ -10,8 +10,8 @@ parameters:
 
 services:
     my.custom.user_provider:
-        class:        MyBundle\Security\Core\User\MyFOSUBUserProvider
-        arguments: ['@fos_user.user_manager', { facebook: facebook_id }]
+        class:  AppBundle\Security\Core\MyFOSUBUserProvider
+        arguments: ['@fos_user.user_manager', { google: googleId }]
 
 framework:
     serializer: { enable_annotations: true }
@@ -95,21 +95,21 @@ fos_user:
             type: AppBundle\Form\ProfileType
 
 hwi_oauth:
-    firewall_names: [secured_area]
-#    connect:
-#        account_connector: my.custom.user_provider
-#        firewall_names:
-#            - 'hwi_oauth_firewall_name' # name of security firewall configured to work with HWIOAuthBundle
-#        fosub:
-#            username_iterations: 30
-#            properties:
-#                facebook:    facebook_id
+#    firewall_names: [secured_area]
+    connect:
+        account_connector: my.custom.user_provider
+    firewall_names:
+        - 'secured_area' # name of security firewall configured to work with HWIOAuthBundle
+    fosub:
+        username_iterations: 30
+        properties:
+            google:    googleId
     resource_owners:
         facebook:
             type:                facebook
             client_id:           2366896556899099
             client_secret:       f1f2219584bf66657adb9d3e0db76a0e
-            scope: email
+            scope:               email
             options:
                 csrf: true
         google:
