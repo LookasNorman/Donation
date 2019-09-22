@@ -169,8 +169,7 @@ home:
         Możesz sprawdzić czym się zajmują.'
   bags:
     title: 'Oddanych worków'
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum
-      tempora!'
+    text: 'Oddane kategorie darów:'
 institution:
   edit:
     title: 'Edycja instytucji'

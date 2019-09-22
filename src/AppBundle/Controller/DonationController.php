@@ -6,12 +6,10 @@ use AppBundle\Entity\Category;
 use AppBundle\Entity\Donation;
 use AppBundle\Entity\GiftState;
 use AppBundle\Entity\Institution;
-use AppBundle\Form\DonationStateType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Swift_SmtpTransport;
 
 /**
  * Donation controller.

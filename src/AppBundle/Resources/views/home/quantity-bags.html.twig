@@ -7,5 +7,9 @@
         {% endif %}
     </em>
     <h3>{% trans %}home.bags.title{% endtrans %}</h3>
-    <p>{% trans %}home.bags.text{% endtrans %}</p>
+    <p><b>{% trans %}home.bags.text{% endtrans %}</b>
+        {% for category in categories %}
+            {{ category.name }}
+        {% endfor %}
+    </p>
 </div>

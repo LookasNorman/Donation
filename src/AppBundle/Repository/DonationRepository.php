@@ -45,4 +45,15 @@ class DonationRepository extends \Doctrine\ORM\EntityRepository
             ->execute();
         return $query;
     }
+
+    public function category()
+    {
+        $query = $this->createQueryBuilder('d')
+            ->select('c.name')
+            ->join('d.categories', 'c')
+            ->groupBy('c.name')
+            ->getQuery()
+            ->execute();
+        return $query;
+    }
 }

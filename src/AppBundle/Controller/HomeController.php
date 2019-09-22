@@ -34,9 +34,11 @@ class HomeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $quantityBags = $em->getRepository(Donation::class)->sumQuantityBags();
+        $categories = $em->getRepository(Donation::class)->category();
 
         return $this->render('@App/home/quantity-bags.html.twig', [
             'quantityBags' => $quantityBags,
+            'categories' => $categories,
         ]);
     }
 
