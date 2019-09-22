@@ -24,7 +24,7 @@
             <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
             <label for="remember_me" class="btn btn--small btn--without-border">{{ 'security.login.remember_me'|trans }}</label>
         </div>
-        <a href="{{ hwi_oauth_login_url('google') }}">
+        <a href="{{ hwi_oauth_login_url('google') }}" id="google-signin">
             <img src="{{ asset('assets/icon/btn_google_signin_dark_normal_web.png') }}" />
         </a>
 
