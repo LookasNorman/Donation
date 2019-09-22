@@ -225,10 +225,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 url: URL + "/contact-email/" + name + ' ' + surname + "/" + message,
                 type: "POST"
             })
-                // .done(function (result) {
-                //     let quantitySummary = quantity + " " + result;
-                //     $('#quantity-summary').text(quantitySummary);
-                // });
+            // .done(function (result) {
+            //     let quantitySummary = quantity + " " + result;
+            //     $('#quantity-summary').text(quantitySummary);
+            // });
         }
     })
 });

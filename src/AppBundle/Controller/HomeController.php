@@ -20,7 +20,7 @@ class HomeController extends Controller
         $institutions = $em->getRepository(Institution::class)->findAll();
 
         return $this->render('@App/home/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
             'institutions' => $institutions,
         ]);
     }
