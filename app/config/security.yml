@@ -15,6 +15,7 @@ security:
 
     firewalls:
         secured_area:
+            logout: ~
             anonymous: ~
             oauth:
                 resource_owners:
