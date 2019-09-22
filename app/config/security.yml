@@ -21,6 +21,7 @@ security:
                 resource_owners:
                     facebook:           "/login/check-facebook"
                     google:             "/login/check-google"
+                    twitter:             "/login/check-twitter"
 #                    my_custom_provider: "/login/check-custom"
 #                    my_github:          "/login/check-github"
                 login_path:        /login
