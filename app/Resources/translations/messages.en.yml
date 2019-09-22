@@ -1,89 +1,88 @@
 donation:
   form:
-    bags: "{1} worek | ]1,4] worki | ]4,Inf] worków"
+    bags: "{1} bag | ]1,Inf] bags"
     slogan:
-      text: 'Oddaj rzeczy, których już nie chcesz'
-      upper: 'potrzebującym'
+      text: "Give back the things you don't want anymore"
+      upper: 'needy'
     steps:
-      title: 'Wystarczą 4 proste kroki'
-      one: 'Wybierz rzeczy'
-      two: 'Spakuj je w worki'
-      three: 'Wybierz fundację'
-      four: 'Zamów kuriera'
-      step: 'Krok'
+      title: '4 simple steps are enough'
+      one: 'Choose things'
+      two: 'Pack them in bags'
+      three: 'Choose a foundation'
+      four: 'Order a courier'
+      step: 'Step'
       instruction:
-        title: 'Ważne!'
-        one: 'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
-          wiedzieć komu najlepiej je przekazać.'
-        two: 'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
-          wiedzieć komu najlepiej je przekazać.'
-        three: 'Wybierz jedną, do
-          której trafi Twoja przesyłka.'
-        four: 'Podaj adres oraz termin odbioru rzeczy.'
+        title: 'Important!'
+        one: 'Complete the details of your items. Thanks to this we will be
+              know who to pass them on to.'
+        two: 'Complete the details of your items. Thanks to this we will be
+              know who to pass them on to.'
+        three: 'Choose one to where your parcel will go.'
+        four: 'Provide the address and date of receipt of the item.'
       subtitle:
-        one: 'Zaznacz co chcesz oddać'
-        two: 'Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy'
-        three: 'Wybierz organizacje, której chcesz pomóc'
-        four: 'Podaj adres oraz termin odbioru rzecz przez kuriera'
+        one: 'Select what you want to give back'
+        two: 'Enter the number of 60l bags you have packed your belongings into'
+        three: 'Choose the organization you want to help'
+        four: 'Enter the address and date of receipt of the item by courier'
       step-four:
         address:
-          title: 'Adres odbioru'
-          street: 'Ulica'
-          city: 'Miasto'
-          zipcode: 'Kod pocztowy'
-          phone: 'Numer telefonu'
+          title: 'Pickup address'
+          street: 'Street'
+          city: 'City'
+          zipcode: 'Zip code'
+          phone: 'Phone number'
         pickup:
-          title: 'Termin odbioru'
-          date: 'Data'
-          time: 'Godzina'
-          comment: 'Uwagi dla kuriera'
+          title: 'Pickup date'
+          date: 'Date'
+          time: 'Time'
+          comment: 'Notes for the courier'
     button:
-      next: 'Dalej'
-      previous: 'Wstecz'
-      confirm: 'Potwierdzam'
+      next: 'Next'
+      previous: 'Previous'
+      confirm: 'Confirm'
     step-five:
-      title: 'Podsumowanie Twojej darowizny'
+      title: 'Summary of your donation'
       summary:
-        title: 'Oddajesz'
-        bags: 'worki'
-        subtitle: 'Dla fundacji'
-      address: 'Adres odbioru'
-      pickup: 'Termin odbioru'
+        title: 'You give'
+        bags: 'bags'
+        subtitle: 'For the foundation'
+      address: 'Pickup addres'
+      pickup: 'pickup date'
     confirm:
-      title: 'Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
-        informacje o odbiorze.'
+      title: 'Thank you for sending the form. We will send any e-mail
+              pickup information.'
   change-state:
     button:
-      confirm: 'Zmień'
+      confirm: 'Change'
   index:
-    title: 'Lista darów'
-    id: 'Lp'
-    user: 'Użytkownik'
-    state: 'Status'
-    quantity: 'Ilość worków'
-    street: 'Ulica'
-    city: 'Miejscowość'
-    zipcode: 'Kod pocztowy'
-    date: 'Data odbioru'
-    time: 'Godzina odbioru'
-    comment: 'Uwagi dla kuriera'
-    phone: 'Numer telefonu'
-    action: 'Akcja'
+    title: 'Gift list'
+    id: 'Order number'
+    user: 'User'
+    state: 'State'
+    quantity: 'Number of bags'
+    street: 'Street'
+    city: 'City'
+    zipcode: 'Zip code'
+    date: 'Pickup date'
+    time: 'Pickup time'
+    comment: 'Notes for the courier'
+    phone: 'Phone number'
+    action: 'Action'
     link:
-      show: 'Szczegóły'
+      show: 'Details'
   show:
-    title: 'Szczegóły daru'
-    id: 'Lp'
-    state: 'Status'
-    institution: 'Instytucja'
-    created: 'Utworzony'
-    gifts: 'Kategorie darów'
-    quantity: 'Ilość'
-    date: 'Data odbioru'
-    time: 'Godzina odbioru'
-    comment: 'Uwagi dla kuriera'
+    title: 'Gift details'
+    id: 'Order number'
+    state: 'State'
+    institution: 'Institution'
+    created: 'Created'
+    gifts: 'Gift categories'
+    quantity: 'Quantity'
+    date: 'Pickup date'
+    time: 'Pickup time'
+    comment: 'Notes for the courier'
     button:
-      back: 'Powrót do listy moich darów'
+      back: 'Return to the list of my gifts'
 email:
   donation:
     title: 'Twój dar'
