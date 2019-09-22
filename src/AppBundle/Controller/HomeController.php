@@ -46,11 +46,12 @@ class HomeController extends Controller
     public function donateInstitutionsAction()
     {
         $em = $this->getDoctrine()->getManager();
-
+        $institutions = $em->getRepository(Donation::class)->institutions();
         $donateInstitutions = count($em->getRepository(Donation::class)->institution());
 
         return $this->render('@App/home/donate-institutions.html.twig', [
             'donateInstitutions' => $donateInstitutions,
+            'institutions' => $institutions,
         ]);
     }
 }

@@ -7,6 +7,9 @@
         {% endif %}
     </em>
     <h3>{% trans %}home.donate.title{% endtrans %}</h3>
-    <p><b>{% trans %}home.donate.subtitle{% endtrans %}:</b> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate
-        quas quam.</p>
+    <p><b>{% trans %}home.donate.subtitle{% endtrans %}:</b>
+        {% for institution in institutions %}
+            {{institution.name}}
+        {% endfor %}
+    </p>
 </div>

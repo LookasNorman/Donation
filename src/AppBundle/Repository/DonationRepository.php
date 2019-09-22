@@ -28,7 +28,18 @@ class DonationRepository extends \Doctrine\ORM\EntityRepository
     public function institution()
     {
         $query = $this->createQueryBuilder('d')
-            ->select('count(d.institution)')
+            ->select('(d.institution)')
+            ->groupBy('d.institution')
+            ->getQuery()
+            ->execute();
+        return $query;
+    }
+
+    public function institutions()
+    {
+        $query = $this->createQueryBuilder('d')
+            ->select('i.name')
+            ->join('d.institution', 'i')
             ->groupBy('d.institution')
             ->getQuery()
             ->execute();
