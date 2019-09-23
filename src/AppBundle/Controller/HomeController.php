@@ -8,6 +8,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class HomeController
+ * @package AppBundle\Controller
+ * @Route("/{_locale}")
+ */
 class HomeController extends Controller
 {
     /**

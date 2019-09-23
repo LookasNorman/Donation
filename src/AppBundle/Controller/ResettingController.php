@@ -34,7 +34,7 @@ use Symfony\Component\Routing\Annotation\Route;
  *
  * @author Thibault Duplessis <thibault.duplessis@gmail.com>
  * @author Christophe Coevoet <stof@notk.org>
- * @Route("/resseting")
+ * @Route("/{_locale}/resseting")
  */
 class ResettingController extends Base
 {

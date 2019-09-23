@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Giftstate controller.
  *
- * @Route("giftstate")
+ * @Route("/{_locale}/giftstate")
  * @Security("is_granted('ROLE_ADMIN')")
  */
 class GiftStateController extends Controller

@@ -10,7 +10,7 @@ class TranslationController extends Controller
 {
     /**
      * @return JsonResponse
-     * @Route("/tran/{id}")
+     * @Route("/{_locale}/tran/{id}")
      */
     public function translateAction($id)
     {

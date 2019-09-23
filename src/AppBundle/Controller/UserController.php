@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * User controller.
  *
- * @Route("user")
+ * @Route("/{_locale}/user")
  */
 class UserController extends Controller
 {

@@ -16,7 +16,7 @@ use Swift_SmtpTransport;
 /**
  * Donation controller.
  *
- * @Route("donation")
+ * @Route("/{_locale}/donation")
  */
 class DonationController extends Controller
 {

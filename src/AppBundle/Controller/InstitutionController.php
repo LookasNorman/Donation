@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Institution controller.
  *
- * @Route("institution")
+ * @Route("/{_locale}/institution")
  * @Security("is_granted('ROLE_ADMIN')")
  */
 class InstitutionController extends Controller

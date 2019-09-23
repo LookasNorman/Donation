@@ -14,7 +14,7 @@ class RegistrationController extends BaseController
     /**
      * @param Request $request
      * @return RedirectResponse|\Symfony\Component\HttpFoundation\Response|null
-     * @Route("/register")
+     * @Route("/{_locale}/register")
      */
     public function registerAction(Request $request)
     {
