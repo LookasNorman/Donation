@@ -1,0 +1,320 @@
+donation:
+  form:
+    bags: "{1} bag | ]1,Inf] bags"
+    slogan:
+      text: "Give back the things you don't want anymore"
+      upper: 'needy'
+    steps:
+      title: '4 simple steps are enough'
+      one: 'Choose things'
+      two: 'Pack them in bags'
+      three: 'Choose a foundation'
+      four: 'Order a courier'
+      step: 'Step'
+      instruction:
+        title: 'Important!'
+        one: 'Complete the details of your items. Thanks to this we will be
+              know who to pass them on to.'
+        two: 'Complete the details of your items. Thanks to this we will be
+              know who to pass them on to.'
+        three: 'Choose one to where your parcel will go.'
+        four: 'Provide the address and date of receipt of the item.'
+      subtitle:
+        one: 'Select what you want to give back'
+        two: 'Enter the number of 60l bags you have packed your belongings into'
+        three: 'Choose the organization you want to help'
+        four: 'Enter the address and date of receipt of the item by courier'
+      step-four:
+        address:
+          title: 'Pickup address'
+          street: 'Street'
+          city: 'City'
+          zipcode: 'Zip code'
+          phone: 'Phone number'
+        pickup:
+          title: 'Pickup date'
+          date: 'Date'
+          time: 'Time'
+          comment: 'Notes for the courier'
+    button:
+      next: 'Next'
+      previous: 'Previous'
+      confirm: 'Confirm'
+    step-five:
+      title: 'Summary of your donation'
+      summary:
+        title: 'You give'
+        bags: 'bags'
+        subtitle: 'For the foundation'
+      address: 'Pickup addres'
+      pickup: 'pickup date'
+    confirm:
+      title: 'Thank you for sending the form. We will send any e-mail
+              pickup information.'
+  change-state:
+    button:
+      confirm: 'Change'
+  index:
+    title: 'Gift list'
+    id: 'Order number'
+    user: 'User'
+    state: 'State'
+    quantity: 'Number of bags'
+    street: 'Street'
+    city: 'City'
+    zipcode: 'Zip code'
+    date: 'Pickup date'
+    time: 'Pickup time'
+    comment: 'Notes for the courier'
+    phone: 'Phone number'
+    action: 'Action'
+    link:
+      show: 'Details'
+  show:
+    title: 'Gift details'
+    id: 'Order number'
+    state: 'State'
+    institution: 'Institution'
+    created: 'Created'
+    gifts: 'Gift categories'
+    quantity: 'Quantity'
+    date: 'Pickup date'
+    time: 'Pickup time'
+    comment: 'Notes for the courier'
+    button:
+      back: 'Return to the list of my gifts'
+email:
+  donation:
+    title: 'Your gift'
+    subtitle: 'Your donation'
+    id: 'Order number'
+    state: 'State'
+    institution: 'Institution'
+    created: 'Created'
+    gifts: 'Gift categories'
+    quantity: 'Number of bags'
+    date: 'Pickup date'
+    time: 'Pickup time'
+    comment: 'Notes for the courier'
+giftstate:
+  edit:
+    title: 'Editing gift status'
+    button:
+      edit: 'Confirm change'
+      back: 'Return to the list of gift statuses'
+      delete: 'Delete gift status'
+  index:
+    title: 'List of gift statuses'
+    id: 'Order number'
+    state: 'State'
+    action: 'Action'
+    show: 'Details'
+    edit: 'Edit'
+    button:
+      new: 'Create a new gift status'
+  new:
+    title: 'Creating a new gift status'
+    create: 'Create'
+    button:
+      back: 'Return to the list of gift statuses'
+  show:
+    title: 'Gift status details'
+    id: 'Order number'
+    state: 'Status name'
+    button:
+      back: 'Return to the list of gift statuses'
+      edit: 'Edit state'
+      delete: 'Delete state'
+home:
+  donate:
+    title: 'Supported organizations'
+    subtitle: 'Supported organizations'
+  contact-form:
+    title: 'Contact us'
+    subtitle: 'Contact form'
+    firstname: 'Firstname'
+    surname: 'Surname'
+    message: 'Message'
+    button:
+      send: 'Send'
+  index:
+    title:
+      firstline: 'Start helping'
+      secondline: 'Give unwanted items to trusted hands'
+    steps:
+      title: '4 simple steps are enough'
+    step:
+      one:
+        title: 'Choose things'
+        text: 'clothes, toys, equipment and more'
+      two:
+        title: 'Pack them up'
+        text: 'use trash bags'
+      three:
+        title: 'Decide who you want to help'
+        text: 'choose a trusted place'
+      four:
+        title: 'Order a courier'
+        text: 'the courier will arrive at a convenient time'
+    user:
+      register: 'Create an account'
+    about:
+      title: 'About us'
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt
+        libero optio esse quisquam illo omnis.'
+    help:
+      title: 'Who we help'
+      text: 'In our database you will find a list of verified foundations with which we cooperate.
+              You can check what they do.'
+  bags:
+    title: 'Completed bags'
+    text: 'Categories of donated gifts:'
+institution:
+  edit:
+    title: 'Institution edition'
+    button:
+      edit: 'Edit'
+      back: 'Return to the list of institutions'
+      delete: 'Delete institution'
+  index:
+    title: 'List of organizations'
+    id: 'Order number'
+    name: 'Name of the organization'
+    desc: 'Description'
+    action: 'Action'
+    button:
+      show: 'Details'
+      edit: 'Edit'
+    link:
+      create: 'Add a new organization'
+  new:
+    title: 'Adding a new organization'
+    button:
+      create: 'Create'
+      back: 'Return to the list of organizations'
+  show:
+    title: 'Organization details'
+    id: 'Order number'
+    name: 'Name of the organization'
+    desc: 'Description of the organization'
+    button:
+      back: 'Return to the list of organizations'
+      edit: 'Organization edition'
+      delete: 'Delete organization'
+menu:
+  logged:
+    welcome: 'Hello'
+    profile: 'Profile'
+    password: 'Change password'
+    donation: 'My rebounds'
+    logout: 'Log out'
+  main:
+    start: 'Start'
+    what: 'What is going on?'
+    about: 'About us'
+    institution: 'Foundations and organizations'
+    gift: 'Give gifts'
+    contact: 'Contact'
+  user:
+    login: 'Log in'
+    register: 'Register'
+    admin: 'Administrator panel'
+user:
+  edit:
+    title: 'Edit user'
+    button:
+      back: 'Return to user list'
+      delete: 'Delete user'
+      edit: 'Edit user'
+  not-exist:
+    title: 'The specified user does not exist.'
+  new:
+    title: 'Creating a new user'
+    button:
+      create: 'Create'
+      back: 'Return to user list'
+  index:
+    title: 'User list'
+    id: 'Order number'
+    username: 'Username'
+    email: 'Email'
+    active: 'State'
+    action: 'Action'
+    state:
+      yes: 'Active'
+      no: 'Inactive'
+    link:
+      show: 'Details'
+      edit: 'Edit'
+      promote: 'Promote'
+      block: 'Lock'
+      unblock: 'Unlock / Activate'
+admin:
+  edit:
+    title: 'Administrator edition'
+    button:
+      edit: 'Edit'
+    link:
+      back: 'Return to the admin list'
+  index:
+    title: 'Admin list'
+    id: 'Order number'
+    username: 'Admin name'
+    email: 'Email'
+    action: 'Action'
+    link:
+      show: 'Details'
+      edit: 'Edit'
+      demote: 'Demote'
+  show:
+    title: 'Administrator details'
+    id: 'Order number'
+    username: 'Admin name'
+    email: 'Email'
+    link:
+      back: 'Return to the list of administrators'
+      edit: 'Edit administrator'
+  base:
+    title: 'Administrator panel'
+  sidebar:
+    portal: 'Portal page'
+    management: 'Management'
+    admin:
+      title: 'Administrators'
+      info: 'Manage'
+      show: 'View'
+      new: 'Create new'
+    user:
+      title: 'Users'
+      info: 'Manage'
+      show: 'View'
+    institution:
+      title: 'Organizations'
+      info: 'Menage'
+      show: 'View'
+      new: 'Create new'
+    giftstate:
+      title: 'Gift statuses'
+      info: 'Manage'
+      show: 'View'
+      new: 'Create new'
+    addons:
+      title: 'Additives'
+      page:
+        title: 'Pages'
+        user:
+          title: 'Members'
+          login: 'Log in'
+          register: 'Register'
+          forgot: 'Remind password'
+form:
+  giftState:
+    state: 'Gift status'
+  institution:
+    name: 'Name of the organization'
+    desc: 'Description of the organization'
+  user:
+    username: 'Username'
+    email: 'Email'
+    firstname: 'Firstname'
+    surname: 'Surname'
