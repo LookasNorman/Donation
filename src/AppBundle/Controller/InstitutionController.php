@@ -5,8 +5,8 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Institution;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Institution controller.
@@ -19,8 +19,7 @@ class InstitutionController extends Controller
     /**
      * Lists all institution entities.
      *
-     * @Route("/", name="institution_index")
-     * @Method("GET")
+     * @Route("/", name="institution_index", methods={"GET"})
      */
     public function indexAction()
     {
@@ -36,8 +35,7 @@ class InstitutionController extends Controller
     /**
      * Creates a new institution entity.
      *
-     * @Route("/new", name="institution_new")
-     * @Method({"GET", "POST"})
+     * @Route("/new", name="institution_new", methods={"GET", "POST"})
      */
     public function newAction(Request $request)
     {
@@ -62,8 +60,7 @@ class InstitutionController extends Controller
     /**
      * Finds and displays a institution entity.
      *
-     * @Route("/{id}", name="institution_show")
-     * @Method("GET")
+     * @Route("/{id}", name="institution_show", methods={"GET"})
      */
     public function showAction(Institution $institution)
     {
@@ -78,8 +75,7 @@ class InstitutionController extends Controller
     /**
      * Displays a form to edit an existing institution entity.
      *
-     * @Route("/{id}/edit", name="institution_edit")
-     * @Method({"GET", "POST"})
+     * @Route("/{id}/edit", name="institution_edit", methods={"GET", "POST"})
      */
     public function editAction(Request $request, Institution $institution)
     {
@@ -103,8 +99,7 @@ class InstitutionController extends Controller
     /**
      * Deletes a institution entity.
      *
-     * @Route("/{id}", name="institution_delete")
-     * @Method("DELETE")
+     * @Route("/{id}", name="institution_delete", methods={"DELETE"})
      */
     public function deleteAction(Request $request, Institution $institution)
     {
@@ -132,7 +127,6 @@ class InstitutionController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('institution_delete', array('id' => $institution->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }
