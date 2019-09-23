@@ -14,35 +14,24 @@ security:
             id: fos_user.user_provider.username_email
 
     firewalls:
-        main:
+        secured_area:
             pattern: ^/
-            form_login:
-                provider: fos_userbundle
-
-                csrf_token_generator: security.csrf.token_manager
-                always_use_default_target_path: false
-                default_target_path: /user/logged
             logout: true
             http_basic: ~
             provider: our_db_provider
             anonymous: true
             logout_on_user_change: true
-            # activate different ways to authenticate
-
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
-
-            # https://symfony.com/doc/current/security/form_login_setup.html
-        secured_area:
-            pattern: ^/
-            logout: ~
-            anonymous: ~
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                always_use_default_target_path: false
+                default_target_path: /user/logged
             oauth:
                 resource_owners:
                     facebook:           "/login/check-facebook"
                     google:             "/login/check-google"
                     twitter:             "/login/check-twitter"
-                    my_custom_provider: "/login/check-custom"
+                    fos_userbundle: "/login/check-custom"
 #                    my_github:          "/login/check-github"
                 login_path:        /login
                 use_forward:       false
@@ -50,9 +39,6 @@ security:
                 check_path: /login_checks
                 oauth_user_provider:
                     service: my.oauth_aware.user_provider.service
-
-
-        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
