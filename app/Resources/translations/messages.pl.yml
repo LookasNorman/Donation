@@ -252,7 +252,7 @@ user:
       unblock: 'Odblokuj / Aktywuj'
 admin:
   edit:
-    title: 'Edycja administatora'
+    title: 'Edycja administratora'
     button:
       edit: 'Edytuj'
     link:
