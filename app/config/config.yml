@@ -105,6 +105,7 @@ hwi_oauth:
         properties:
             google:    googleId
             facebook: facebookId
+            twitter: twitterId
     resource_owners:
         facebook:
             type:                facebook

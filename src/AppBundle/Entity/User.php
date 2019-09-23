@@ -49,6 +49,13 @@ class User extends BaseUser
 
     private $googleAccessToken;
 
+    /**
+     * @ORM\Column(name="twitter_id", type="string", length=255, nullable=true)
+     */
+    private $twitterId;
+
+    private $twitterAccessToken;
+
     private $nickname;
 
     /**
@@ -264,5 +271,43 @@ class User extends BaseUser
     public function getGoogleAccessToken()
     {
         return $this->googleAccessToken;
+    }
+
+    /**
+     * @param string $twitterId
+     * @return User
+     */
+    public function setTwitterId($twitterId)
+    {
+        $this->twitterId = $twitterId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTwitterId()
+    {
+        return $this->twitterId;
+    }
+
+    /**
+     * @param string $twitterAccessToken
+     * @return User
+     */
+    public function setTwitterAccessToken($twitterAccessToken)
+    {
+        $this->twitterAccessToken = $twitterAccessToken;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTwitterAccessToken()
+    {
+        return $this->twitterAccessToken;
     }
 }
