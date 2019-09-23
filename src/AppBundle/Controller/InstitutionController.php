@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Institution controller.
  *
- * @Route("institution")
+ * @Route("/{_locale}/institution")
  * @Security("is_granted('ROLE_ADMIN')")
  */
 class InstitutionController extends Controller

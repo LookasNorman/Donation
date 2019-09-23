@@ -3,12 +3,17 @@
 
 namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use FOS\UserBundle\Controller\RegistrationController as BaseController;
 use FOS\UserBundle\Event\GetResponseUserEvent;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class RegistrationController
+ * @package AppBundle\Controller
+ * @Route("/{_locale}/")
+ */
 class RegistrationController extends BaseController
 {
     /**

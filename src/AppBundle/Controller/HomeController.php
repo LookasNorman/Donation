@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/{_locale}/", name="homepage")
      */
     public function indexAction(Request $request)
     {

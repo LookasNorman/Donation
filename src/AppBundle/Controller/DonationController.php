@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Donation controller.
  *
- * @Route("donation")
+ * @Route("/{_locale}/donation")
  */
 class DonationController extends Controller
 {

@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class AdminController
  * @package AppBundle\Controller
- * @Route("admin")
+ * @Route("/{_locale}/admin")
  * @Security("is_granted('ROLE_ADMIN')")
  */
 class AdminController extends Controller

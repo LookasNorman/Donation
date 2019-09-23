@@ -5,7 +5,11 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
-
+/**
+ * Class ContactController
+ * @package AppBundle\Controller
+ * @Route("/{_locale}/")
+ */
 class ContactController extends Controller
 {
     /**

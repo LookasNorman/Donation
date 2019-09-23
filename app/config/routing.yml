@@ -13,6 +13,7 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix: /{_locale}/
 
 facebook_login:
   path: /login/check-facebook
