@@ -319,3 +319,9 @@ form:
     email: 'Adres email'
     firstname: 'Imię'
     surname: 'Nazwisko'
+profile:
+  show:
+    username: 'Nazwa użytkownika'
+    email: 'Adres email'
+    firstname: 'Imię'
+    surname: 'Nazwisko'
