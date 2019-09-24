@@ -18,6 +18,7 @@ security:
             pattern: ^/
             logout:
                 path: fos_user_security_logout
+                target: homepage
             http_basic: ~
             provider: our_db_provider
             anonymous: true
