@@ -123,5 +123,6 @@ hwi_oauth:
             type:                twitter
             client_id:           "%twitter_client%"
             client_secret:       "%twitter_secret%"
+            scope:               email
             options:
                 include_email: true

@@ -41,6 +41,7 @@ security:
                 use_forward:       false
                 failure_path:      /login
                 check_path: /login_checks
+                default_target_path: fos_user_profile_show
                 oauth_user_provider:
                     service: my.oauth_aware.user_provider.service
         dev:
